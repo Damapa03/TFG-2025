@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://w1fgptsfrb6e"
-path="res://.godot/imported/ss-bf.png-a81ff06ef68e9002f141b1b6bedfa6ce.ctex"
+uid="uid://bj5mclqbeapbr"
+path="res://.godot/imported/tt-gf-TileSet 16x16.png-00722f00f83cab235d9a5308570064ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/miscelaneous/levels/ss-bf.png"
-dest_files=["res://.godot/imported/ss-bf.png-a81ff06ef68e9002f141b1b6bedfa6ce.ctex"]
+source_file="res://assets/miscelaneous/levels/tt-gf/tt-gf-TileSet 16x16.png"
+dest_files=["res://.godot/imported/tt-gf-TileSet 16x16.png-00722f00f83cab235d9a5308570064ae.ctex"]
 
 [params]
 

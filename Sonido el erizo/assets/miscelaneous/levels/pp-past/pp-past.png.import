@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cslluh0w54lj"
-path="res://.godot/imported/cc-past.png-eb89d3ac9b3e3a9f3ee1c7908e2f161c.ctex"
+uid="uid://bstwc57m2631b"
+path="res://.godot/imported/pp-past.png-fb84bcd970953a535ae9694a3dfbb299.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/miscelaneous/levels/cc-past.png"
-dest_files=["res://.godot/imported/cc-past.png-eb89d3ac9b3e3a9f3ee1c7908e2f161c.ctex"]
+source_file="res://assets/miscelaneous/levels/pp-past/pp-past.png"
+dest_files=["res://.godot/imported/pp-past.png-fb84bcd970953a535ae9694a3dfbb299.ctex"]
 
 [params]
 

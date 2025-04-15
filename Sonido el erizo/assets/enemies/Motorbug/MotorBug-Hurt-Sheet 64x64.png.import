@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bde8mjkhkf47m"
-path="res://.godot/imported/pp-past.png-4c63fc2f99500e878a20accd4df47b90.ctex"
+uid="uid://cokxvl0i0541e"
+path="res://.godot/imported/MotorBug-Hurt-Sheet 64x64.png-dd1f7834e111706ad4c5de6d49d1300e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/miscelaneous/levels/pp-past.png"
-dest_files=["res://.godot/imported/pp-past.png-4c63fc2f99500e878a20accd4df47b90.ctex"]
+source_file="res://assets/enemies/Motorbug/MotorBug-Hurt-Sheet 64x64.png"
+dest_files=["res://.godot/imported/MotorBug-Hurt-Sheet 64x64.png-dd1f7834e111706ad4c5de6d49d1300e.ctex"]
 
 [params]
 

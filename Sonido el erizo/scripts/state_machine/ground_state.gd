@@ -21,7 +21,7 @@ func crouch():
 	playback.travel(crouch_animation)
 
 func jump():
-	character.velocity = jumpVelocity
+	character.velocity.y = jumpVelocity
 	next_state = air_state
 	playback.travel(jump_animation)
 	

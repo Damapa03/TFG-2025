@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmmyry6phiov0"
-path="res://.godot/imported/ww-past.png-8173f83c1fda8f5701eb22f967371c63.ctex"
+uid="uid://c05ox776r5d8q"
+path="res://.godot/imported/MotoBug-Smoke-Sheet 64x64.png-9bb7f1c6298307c1dcb3c380abd8f873.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/miscelaneous/levels/ww-past.png"
-dest_files=["res://.godot/imported/ww-past.png-8173f83c1fda8f5701eb22f967371c63.ctex"]
+source_file="res://assets/enemies/Motorbug/MotoBug-Smoke-Sheet 64x64.png"
+dest_files=["res://.godot/imported/MotoBug-Smoke-Sheet 64x64.png-9bb7f1c6298307c1dcb3c380abd8f873.ctex"]
 
 [params]
 
