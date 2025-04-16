@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://b8aj8ttrd62d8"]
+[gd_scene load_steps=9 format=4 uid="uid://b8aj8ttrd62d8"]
 
 [ext_resource type="PackedScene" uid="uid://f6o023650mrl" path="res://scenes/characters/sonic.tscn" id="2_tx344"]
 [ext_resource type="PackedScene" uid="uid://cc1sywkcowqsf" path="res://scenes/enemies/motor_bug.tscn" id="3_mponu"]
 [ext_resource type="Texture2D" uid="uid://c7hmjiq1udhfb" path="res://assets/miscelaneous/levels/cc-past/cc-past-TileSet 16x16.png" id="3_tx344"]
 [ext_resource type="PackedScene" uid="uid://c46hxhtd70pna" path="res://scenes/miscelaneous/green_gem.tscn" id="4_mponu"]
+[ext_resource type="PackedScene" uid="uid://dps8oqjnqfep" path="res://scenes/miscelaneous/ring.tscn" id="5_1r51i"]
+[ext_resource type="PackedScene" uid="uid://0offw7jyhcgf" path="res://scenes/miscelaneous/bumper.tscn" id="5_fcifr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mponu"]
 texture = ExtResource("3_tx344")
@@ -850,3 +852,10 @@ tile_set = SubResource("TileSet_1r51i")
 
 [node name="Green Gem" parent="TileMapLayer" instance=ExtResource("4_mponu")]
 position = Vector2(-32, -97)
+
+[node name="Bumper" parent="." node_paths=PackedStringArray("character") instance=ExtResource("5_fcifr")]
+position = Vector2(41, -9)
+character = NodePath("../sonic")
+
+[node name="Ring" parent="." instance=ExtResource("5_1r51i")]
+position = Vector2(-122, -101)

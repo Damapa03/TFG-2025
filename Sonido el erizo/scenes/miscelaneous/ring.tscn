@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://dps8oqjnqfep"]
+
+[ext_resource type="Texture2D" uid="uid://bald2ot0xg04c" path="res://assets/miscelaneous/Rings-Sheet.png" id="1_piswf"]
+[ext_resource type="Script" uid="uid://j7npsang36xw" path="res://scenes/miscelaneous/ring.gd" id="1_v3pal"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v3pal"]
+size = Vector2(20, 26)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1fwgl"]
+atlas = ExtResource("1_piswf")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5eqe"]
+atlas = ExtResource("1_piswf")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nwqj7"]
+atlas = ExtResource("1_piswf")
+region = Rect2(0, 64, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iiht5"]
+atlas = ExtResource("1_piswf")
+region = Rect2(64, 64, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ispq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1fwgl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5eqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nwqj7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iiht5")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[node name="Ring" type="Node2D"]
+script = ExtResource("1_v3pal")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_v3pal")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, -6)
+sprite_frames = SubResource("SpriteFrames_5ispq")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.700217
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
