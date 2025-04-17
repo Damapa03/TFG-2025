@@ -853,9 +853,8 @@ tile_set = SubResource("TileSet_1r51i")
 [node name="Green Gem" parent="TileMapLayer" instance=ExtResource("4_mponu")]
 position = Vector2(-32, -97)
 
-[node name="Bumper" parent="." node_paths=PackedStringArray("character") instance=ExtResource("5_fcifr")]
+[node name="Bumper" parent="." instance=ExtResource("5_fcifr")]
 position = Vector2(41, -9)
-character = NodePath("../sonic")
 
 [node name="Ring" parent="." instance=ExtResource("5_1r51i")]
 position = Vector2(-122, -101)
