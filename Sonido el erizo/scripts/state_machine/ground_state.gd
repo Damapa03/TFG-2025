@@ -5,7 +5,7 @@ class_name Ground_state extends State
 @export var air_state: State
 @export var crouch_state: State
 
-@export var jump_animation: String = "jump"
+@export var jump_animation: String = "rolling"
 @export var crouch_animation: String = "crouch"
 
 @export var idle_timer: Timer
