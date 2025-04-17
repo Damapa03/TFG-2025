@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://yx4gw4gce2lu"]
+
+[ext_resource type="Script" uid="uid://cvswl5mgwme65" path="res://scripts/state_machine/stateMachine.gd" id="1_yju3u"]
+[ext_resource type="Script" uid="uid://dvrftwmchb2k6" path="res://scripts/state_machine/hit_state.gd" id="2_gqfpx"]
+[ext_resource type="Script" uid="uid://c341r7njyslyw" path="res://state.gd" id="3_cbuvo"]
+[ext_resource type="Script" uid="uid://uwlga7vtw57a" path="res://scripts/state_machine/StateLabel.gd" id="4_fdlwe"]
+
+[node name="EnemieStateMachine" type="Node"]
+script = ExtResource("1_yju3u")
+
+[node name="hit" type="Node" parent="."]
+script = ExtResource("2_gqfpx")
+
+[node name="walk" type="Node" parent="."]
+script = ExtResource("3_cbuvo")
+metadata/_custom_type_script = "uid://c341r7njyslyw"
+
+[node name="dead" type="Node" parent="."]
+script = ExtResource("3_cbuvo")
+metadata/_custom_type_script = "uid://c341r7njyslyw"
+
+[node name="Label" type="Label" parent="." node_paths=PackedStringArray("statemachine")]
+offset_right = 40.0
+offset_bottom = 23.0
+script = ExtResource("4_fdlwe")
+statemachine = NodePath("..")

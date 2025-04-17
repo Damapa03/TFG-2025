@@ -1,9 +1,9 @@
 [gd_scene load_steps=16 format=3 uid="uid://cc1sywkcowqsf"]
 
 [ext_resource type="Texture2D" uid="uid://cokxvl0i0541e" path="res://assets/enemies/Motorbug/MotorBug-Hurt-Sheet 64x64.png" id="1_1efwk"]
-[ext_resource type="Script" uid="uid://c785ckqwvjykn" path="res://scenes/enemies/motor_bug.gd" id="1_6husq"]
+[ext_resource type="Script" uid="uid://c785ckqwvjykn" path="res://scripts/enemies/motor_bug.gd" id="1_6husq"]
 [ext_resource type="Texture2D" uid="uid://bysn65ibn83r6" path="res://assets/enemies/Motorbug/MotorBug-Idle-Sheet 64x64.png" id="1_n52nx"]
-[ext_resource type="PackedScene" uid="uid://yx4gw4gce2lu" path="res://scenes/enemies/enemie_state_machine.tscn" id="3_6husq"]
+[ext_resource type="PackedScene" uid="uid://yx4gw4gce2lu" path="res://scenes/components/enemie_state_machine.tscn" id="3_6husq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6husq"]
 size = Vector2(20, 27)

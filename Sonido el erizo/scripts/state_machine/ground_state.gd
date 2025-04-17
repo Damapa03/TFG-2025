@@ -8,6 +8,20 @@ class_name Ground_state extends State
 @export var jump_animation: String = "jump"
 @export var crouch_animation: String = "crouch"
 
+@export var idle_timer: Timer
+@export var idleAngry_timer: Timer
+
+
+var afk = true
+
+func state_process(delta:float):
+	if character.velocity == Vector2.ZERO and afk:
+		idle_timer.start()
+		afk = false
+	if character.velocity != Vector2.ZERO:
+		idle_timer.stop()
+		afk = true
+
 func state_input(event: InputEvent):
 	if event.is_action_pressed("jump"):
 		jump()
@@ -25,3 +39,11 @@ func jump():
 	next_state = air_state
 	playback.travel(jump_animation)
 	
+
+func _on_idle_timer_timeout() -> void:
+	playback.travel("idle")
+	idleAngry_timer.start()
+
+
+func _on_idle_angry_timer_timeout() -> void:
+	playback.travel("idle_angry")
