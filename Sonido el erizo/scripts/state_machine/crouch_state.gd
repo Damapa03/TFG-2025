@@ -9,6 +9,8 @@ func state_input(event: InputEvent):
 	if event.is_action_released("down"):
 		next_state = ground_state
 
+func on_exit():
+	playback.travel("Start")
 
 func spinDash():
 	pass

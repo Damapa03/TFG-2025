@@ -1,12 +1,14 @@
 extends CharacterBody2D
 
-
-@export var SPEED = 300.0
+@export var _SPEED = 300
+@export var jumpVelocity = -400.0
+@export var friction = 2000.0
 
 @onready var animationTree: AnimationTree = $AnimationTree
 @onready var sprite2D: Sprite2D = $Sprite2D
-#@onready var stateMachine: StateMachine = $StateMachine
+@onready var stateMachine: StateMachine = $StateMachine
 
+var SPEED = _SPEED
 
 
 func _physics_process(delta: float) -> void:
@@ -20,7 +22,7 @@ func _physics_process(delta: float) -> void:
 	if direction:
 		velocity.x = direction * SPEED
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		velocity.x = move_toward(velocity.x, 0, friction * delta)
 	
 	if direction > 0:
 		sprite2D.flip_h = false

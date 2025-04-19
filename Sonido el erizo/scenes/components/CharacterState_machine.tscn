@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dn1h0pw0o4w6t"]
+[gd_scene load_steps=10 format=3 uid="uid://dn1h0pw0o4w6t"]
 
 [ext_resource type="Script" uid="uid://cvswl5mgwme65" path="res://scripts/state_machine/stateMachine.gd" id="1_y17yt"]
 [ext_resource type="Script" uid="uid://uwlga7vtw57a" path="res://scripts/state_machine/StateLabel.gd" id="2_oipgn"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" uid="uid://dvrftwmchb2k6" path="res://scripts/state_machine/hit_state.gd" id="5_5dn32"]
 [ext_resource type="Script" uid="uid://cxpgd6i0s3ifw" path="res://scripts/state_machine/crouch_state.gd" id="5_l0k2u"]
 [ext_resource type="Script" uid="uid://bcqec81sn8xpa" path="res://scripts/state_machine/attack_state.gd" id="6_oipgn"]
+[ext_resource type="Script" uid="uid://b1otagrijnsbv" path="res://scripts/state_machine/walk_state.gd" id="8_odelu"]
+[ext_resource type="Script" uid="uid://255cd2bhxhk5" path="res://scenes/components/run_state.gd" id="9_knjv0"]
 
 [node name="StateMachine" type="Node2D" node_paths=PackedStringArray("currentState")]
 script = ExtResource("1_y17yt")
@@ -22,10 +24,11 @@ statemachine = NodePath("..")
 script = ExtResource("3_227bp")
 ground_state = NodePath("../GroundState")
 
-[node name="GroundState" type="Node" parent="." node_paths=PackedStringArray("air_state", "crouch_state")]
+[node name="GroundState" type="Node" parent="." node_paths=PackedStringArray("air_state", "crouch_state", "walk_state")]
 script = ExtResource("4_0d6a3")
 air_state = NodePath("../AirState")
 crouch_state = NodePath("../CrouchState")
+walk_state = NodePath("../WalkState")
 
 [node name="HitState" type="Node" parent="."]
 script = ExtResource("5_5dn32")
@@ -40,4 +43,11 @@ can_move = true
 script = ExtResource("6_oipgn")
 can_move = true
 
-[node name="Node" type="Node" parent="."]
+[node name="WalkState" type="Node" parent="." node_paths=PackedStringArray("run_state")]
+script = ExtResource("8_odelu")
+run_state = NodePath("../RunState")
+
+[node name="RunState" type="Node" parent="."]
+script = ExtResource("9_knjv0")
+
+[node name="DashState" type="Node" parent="."]
