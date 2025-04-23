@@ -1,0 +1,52 @@
+[gd_scene load_steps=3 format=3 uid="uid://mnlfm8xivuq"]
+
+[ext_resource type="Script" uid="uid://dqo2llfg2b7d1" path="res://scripts/ui/loginButton.gd" id="1_gbyoo"]
+[ext_resource type="Script" uid="uid://ep27fsrgfjmp" path="res://scripts/ui/registerButton.gd" id="2_oti1m"]
+
+[node name="Register" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoginButton" type="Button" parent="."]
+offset_left = 353.0
+offset_top = 511.0
+offset_right = 499.0
+offset_bottom = 542.0
+text = "Login"
+script = ExtResource("1_gbyoo")
+
+[node name="UserInputText" type="TextEdit" parent="."]
+offset_left = 387.0
+offset_top = 362.0
+offset_right = 696.0
+offset_bottom = 397.0
+placeholder_text = "Usuario"
+
+[node name="PasswordInputText" type="TextEdit" parent="."]
+offset_left = 388.0
+offset_top = 417.0
+offset_right = 697.0
+offset_bottom = 452.0
+placeholder_text = "Contraseña"
+
+[node name="EmailInputText" type="TextEdit" parent="."]
+offset_left = 389.0
+offset_top = 316.0
+offset_right = 698.0
+offset_bottom = 351.0
+placeholder_text = "Correo"
+
+[node name="RegisterButton" type="Button" parent="."]
+offset_left = 576.0
+offset_top = 512.0
+offset_right = 722.0
+offset_bottom = 543.0
+text = "Registrarse"
+script = ExtResource("2_oti1m")
+
+[connection signal="pressed" from="LoginButton" to="LoginButton" method="_on_pressed"]
+[connection signal="pressed" from="RegisterButton" to="RegisterButton" method="_on_pressed"]
