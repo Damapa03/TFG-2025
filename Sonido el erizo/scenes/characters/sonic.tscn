@@ -821,8 +821,8 @@ offset_right = 16.0
 offset_bottom = -38.0
 
 [node name="GroundState" parent="StateMachine" index="2" node_paths=PackedStringArray("idle_timer", "idleAngry_timer")]
-idle_timer = NodePath("../../Timers/idle_timer")
-idleAngry_timer = NodePath("../../Timers/idleAngry_timer")
+idle_timer = NodePath("../../Idle")
+idleAngry_timer = NodePath("../../Idle-Angry")
 
 [node name="WalkState" parent="StateMachine" index="6" node_paths=PackedStringArray("air_state", "ground_state")]
 air_state = NodePath("../AirState")
@@ -843,5 +843,11 @@ libraries = {
 }
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Idle" type="Timer" parent="."]
+wait_time = 30.0
+
+[node name="Idle-Angry" type="Timer" parent="."]
+wait_time = 10.0
 
 [editable path="StateMachine"]
