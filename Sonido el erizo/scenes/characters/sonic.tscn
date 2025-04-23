@@ -634,8 +634,6 @@ vframes = 2
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_ybivp")
 
-[node name="Camera2D" type="Camera2D" parent="."]
-
 [node name="Homming_area" type="Area2D" parent="."]
 monitoring = false
 
@@ -662,5 +660,7 @@ root_node = NodePath("../AnimationTree")
 libraries = {
 &"": SubResource("AnimationLibrary_4yhb8")
 }
+
+[node name="Camera2D" type="Camera2D" parent="."]
 
 [editable path="StateMachine"]
