@@ -8,7 +8,7 @@
 [ext_resource type="Script" uid="uid://cxpgd6i0s3ifw" path="res://scripts/state_machine/crouch_state.gd" id="5_l0k2u"]
 [ext_resource type="Script" uid="uid://bcqec81sn8xpa" path="res://scripts/state_machine/attack_state.gd" id="6_oipgn"]
 [ext_resource type="Script" path="res://scripts/state_machine/walk_state.gd" id="8_odelu"]
-[ext_resource type="Script" path="res://scripts/state_machine/run_state.gd" id="9_knjv0"]
+[ext_resource type="Script" uid="uid://255cd2bhxhk5" path="res://scripts/state_machine/run_state.gd" id="9_knjv0"]
 
 [node name="StateMachine" type="Node2D" node_paths=PackedStringArray("currentState")]
 script = ExtResource("1_y17yt")

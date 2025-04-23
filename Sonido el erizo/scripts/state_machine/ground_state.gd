@@ -26,7 +26,7 @@ func state_process(delta:float):
 		playback.start("Start")
 
 func state_input(event: InputEvent):
-	if event.is_action_pressed("jump"):
+	if event.is_action_pressed("jump") and character.is_on_floor():
 		jump()
 	
 	if event.is_action_pressed("down"):
