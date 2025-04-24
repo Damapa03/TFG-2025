@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://f6o023650mrl"]
+[gd_scene load_steps=68 format=3 uid="uid://f6o023650mrl"]
 
 [ext_resource type="Script" uid="uid://bpgr472lx7vid" path="res://scripts/characters/sonic.gd" id="1_c1csn"]
 [ext_resource type="Texture2D" uid="uid://s2jnusjwtgfc" path="res://assets/characters/sonic/idle-Sheet 64x64.png" id="2_xxc5g"]
@@ -62,9 +62,6 @@ animation = &"walk"
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8hysh"]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ml2t0"]
-
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_g3glp"]
-advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_7odxk"]
 
@@ -135,8 +132,8 @@ states/spin_dash/node = SubResource("AnimationNodeAnimation_67o3r")
 states/spin_dash/position = Vector2(236, 359)
 states/walk/node = SubResource("AnimationNodeAnimation_1g8w7")
 states/walk/position = Vector2(245, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_ynsbk"), "idle", "idle_angry", SubResource("AnimationNodeStateMachineTransition_wgr48"), "Start", "rolling", SubResource("AnimationNodeStateMachineTransition_1g8w7"), "Start", "walk", SubResource("AnimationNodeStateMachineTransition_8hysh"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_ml2t0"), "dead", "End", SubResource("AnimationNodeStateMachineTransition_g3glp"), "hurt", "dead", SubResource("AnimationNodeStateMachineTransition_7odxk"), "idle_angry", "dead", SubResource("AnimationNodeStateMachineTransition_fl5mn"), "idle", "dead", SubResource("AnimationNodeStateMachineTransition_mynqs"), "run", "dead", SubResource("AnimationNodeStateMachineTransition_srqi2"), "walk", "dead", SubResource("AnimationNodeStateMachineTransition_n27ak"), "break", "dead", SubResource("AnimationNodeStateMachineTransition_cxnho"), "rolling", "run", SubResource("AnimationNodeStateMachineTransition_4xlf4"), "rolling", "walk", SubResource("AnimationNodeStateMachineTransition_4yhb8"), "Start", "spin_dash", SubResource("AnimationNodeStateMachineTransition_pl84v"), "spin_dash", "rolling", SubResource("AnimationNodeStateMachineTransition_uypal"), "run", "dash", SubResource("AnimationNodeStateMachineTransition_67o3r"), "dash", "break", SubResource("AnimationNodeStateMachineTransition_kia2i"), "run", "break", SubResource("AnimationNodeStateMachineTransition_vttgf"), "spin_dash", "hurt", SubResource("AnimationNodeStateMachineTransition_o5t5k"), "break", "hurt", SubResource("AnimationNodeStateMachineTransition_onq7b"), "idle_angry", "hurt", SubResource("AnimationNodeStateMachineTransition_ly71b"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_sqkhe"), "walk", "hurt", SubResource("AnimationNodeStateMachineTransition_hinta"), "run", "hurt", SubResource("AnimationNodeStateMachineTransition_sfftv"), "rolling", "hurt", SubResource("AnimationNodeStateMachineTransition_b802q"), "Start", "crouch", SubResource("AnimationNodeStateMachineTransition_rl1qm")]
-graph_offset = Vector2(-97, -209)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_ynsbk"), "idle", "idle_angry", SubResource("AnimationNodeStateMachineTransition_wgr48"), "Start", "rolling", SubResource("AnimationNodeStateMachineTransition_1g8w7"), "Start", "walk", SubResource("AnimationNodeStateMachineTransition_8hysh"), "walk", "run", SubResource("AnimationNodeStateMachineTransition_ml2t0"), "hurt", "dead", SubResource("AnimationNodeStateMachineTransition_7odxk"), "idle_angry", "dead", SubResource("AnimationNodeStateMachineTransition_fl5mn"), "idle", "dead", SubResource("AnimationNodeStateMachineTransition_mynqs"), "run", "dead", SubResource("AnimationNodeStateMachineTransition_srqi2"), "walk", "dead", SubResource("AnimationNodeStateMachineTransition_n27ak"), "break", "dead", SubResource("AnimationNodeStateMachineTransition_cxnho"), "rolling", "run", SubResource("AnimationNodeStateMachineTransition_4xlf4"), "rolling", "walk", SubResource("AnimationNodeStateMachineTransition_4yhb8"), "Start", "spin_dash", SubResource("AnimationNodeStateMachineTransition_pl84v"), "spin_dash", "rolling", SubResource("AnimationNodeStateMachineTransition_uypal"), "run", "dash", SubResource("AnimationNodeStateMachineTransition_67o3r"), "dash", "break", SubResource("AnimationNodeStateMachineTransition_kia2i"), "run", "break", SubResource("AnimationNodeStateMachineTransition_vttgf"), "spin_dash", "hurt", SubResource("AnimationNodeStateMachineTransition_o5t5k"), "break", "hurt", SubResource("AnimationNodeStateMachineTransition_onq7b"), "idle_angry", "hurt", SubResource("AnimationNodeStateMachineTransition_ly71b"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_sqkhe"), "walk", "hurt", SubResource("AnimationNodeStateMachineTransition_hinta"), "run", "hurt", SubResource("AnimationNodeStateMachineTransition_sfftv"), "rolling", "hurt", SubResource("AnimationNodeStateMachineTransition_b802q"), "Start", "crouch", SubResource("AnimationNodeStateMachineTransition_rl1qm")]
+graph_offset = Vector2(-55, -138)
 
 [sub_resource type="Animation" id="Animation_svpfj"]
 length = 0.001
@@ -868,6 +865,7 @@ collision_mask = 4
 position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_4yhb8")
 
+[connection signal="animation_finished" from="AnimationTree" to="StateMachine/DeadState" method="_on_animation_tree_animation_finished"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
 
 [editable path="StateMachine"]

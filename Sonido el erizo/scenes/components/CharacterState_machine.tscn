@@ -7,9 +7,9 @@
 [ext_resource type="Script" uid="uid://dvrftwmchb2k6" path="res://scripts/state_machine/enemie_hit_state.gd" id="5_5dn32"]
 [ext_resource type="Script" uid="uid://cxpgd6i0s3ifw" path="res://scripts/state_machine/crouch_state.gd" id="5_l0k2u"]
 [ext_resource type="Script" uid="uid://bcqec81sn8xpa" path="res://scripts/state_machine/attack_state.gd" id="6_oipgn"]
-[ext_resource type="Script" path="res://scripts/state_machine/walk_state.gd" id="8_odelu"]
+[ext_resource type="Script" uid="uid://b1otagrijnsbv" path="res://scripts/state_machine/walk_state.gd" id="8_odelu"]
 [ext_resource type="Script" uid="uid://255cd2bhxhk5" path="res://scripts/state_machine/run_state.gd" id="9_knjv0"]
-[ext_resource type="Script" uid="uid://c341r7njyslyw" path="res://state.gd" id="10_ai5su"]
+[ext_resource type="Script" uid="uid://buybodsw4s5un" path="res://scripts/state_machine/character_dead_state.gd" id="10_ai5su"]
 
 [node name="StateMachine" type="Node2D" node_paths=PackedStringArray("currentState")]
 script = ExtResource("1_y17yt")
@@ -64,3 +64,7 @@ can_move = true
 
 [node name="DeadState" type="Node" parent="."]
 script = ExtResource("10_ai5su")
+
+[node name="Death_timer" type="Timer" parent="DeadState"]
+
+[connection signal="timeout" from="DeadState/Death_timer" to="DeadState" method="_on_death_timer_timeout"]
