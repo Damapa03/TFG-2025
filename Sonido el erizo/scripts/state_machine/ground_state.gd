@@ -15,6 +15,10 @@ class_name Ground_state extends State
 
 var afk = true
 
+func on_enter():
+	character.SPEED = character._SPEED
+
+
 func state_process(delta:float):
 	if character.velocity == Vector2.ZERO and afk:
 		idle_timer.start()

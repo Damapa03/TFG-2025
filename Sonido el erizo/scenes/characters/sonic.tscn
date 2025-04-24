@@ -828,8 +828,9 @@ offset_bottom = -38.0
 idle_timer = NodePath("../../Idle")
 idleAngry_timer = NodePath("../../Idle-Angry")
 
-[node name="HitState" parent="StateMachine" index="3"]
+[node name="HitState" parent="StateMachine" index="3" node_paths=PackedStringArray("ground_state")]
 script = ExtResource("4_pl84v")
+ground_state = NodePath("../GroundState")
 can_move = false
 
 [node name="CrouchState" parent="StateMachine" index="4"]
@@ -838,11 +839,6 @@ can_move = false
 [node name="WalkState" parent="StateMachine" index="6" node_paths=PackedStringArray("air_state", "ground_state")]
 air_state = NodePath("../AirState")
 ground_state = NodePath("../GroundState")
-can_move = true
-
-[node name="RunState" parent="StateMachine" index="7" node_paths=PackedStringArray("air_state")]
-air_state = NodePath("../AirState")
-can_move = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath(".")
