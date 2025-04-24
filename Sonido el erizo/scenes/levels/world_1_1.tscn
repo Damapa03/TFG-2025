@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bwno1ix76xjs7"]
+[gd_scene load_steps=12 format=4 uid="uid://bwno1ix76xjs7"]
 
 [ext_resource type="Texture2D" uid="uid://iy371jiny3bo" path="res://assets/miscelaneous/levels/cc-past/cc-past-TileSet 16x16.png" id="1_snkvd"]
 [ext_resource type="PackedScene" uid="uid://c46hxhtd70pna" path="res://scenes/miscelaneous/green_gem.tscn" id="2_smt30"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cc1sywkcowqsf" path="res://scenes/enemies/motor_bug.tscn" id="4_v1yw5"]
 [ext_resource type="PackedScene" uid="uid://cb23de4pf0o6t" path="res://scenes/miscelaneous/goal.tscn" id="7_7rsdm"]
 [ext_resource type="PackedScene" uid="uid://cgeb1tkrepdsu" path="res://scenes/miscelaneous/goal_ring.tscn" id="8_jbdnl"]
+[ext_resource type="PackedScene" uid="uid://blpxr1ox5peiw" path="res://scenes/character_camera.tscn" id="9_jbdnl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t82ws"]
 texture = ExtResource("1_snkvd")
@@ -936,7 +937,9 @@ position = Vector2(2333, 916)
 position = Vector2(2078, 922)
 
 [node name="Goal" parent="." instance=ExtResource("7_7rsdm")]
-position = Vector2(3446, 874)
+position = Vector2(3443, 879)
 
 [node name="Goal ring" parent="Goal" instance=ExtResource("8_jbdnl")]
 position = Vector2(116, -67)
+
+[node name="Camera2D" parent="." instance=ExtResource("9_jbdnl")]

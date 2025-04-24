@@ -848,9 +848,6 @@ libraries = {
 &"": SubResource("AnimationLibrary_4yhb8")
 }
 
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
-
 [node name="Idle" type="Timer" parent="."]
 wait_time = 30.0
 

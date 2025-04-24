@@ -45,8 +45,9 @@ script = ExtResource("5_l0k2u")
 ground_state = NodePath("../GroundState")
 can_move = true
 
-[node name="AttackState" type="Node" parent="."]
+[node name="AttackState" type="Node" parent="." node_paths=PackedStringArray("ground_state")]
 script = ExtResource("6_oipgn")
+ground_state = NodePath("../GroundState")
 can_move = true
 
 [node name="WalkState" type="Node" parent="." node_paths=PackedStringArray("run_state")]
