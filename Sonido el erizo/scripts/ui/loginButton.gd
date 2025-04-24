@@ -3,7 +3,7 @@ extends Button
 @onready var userInputText: TextEdit = $"../UserInputText"
 @onready var passWordInputText: TextEdit = $"../PasswordInputText"
 
-@export var menu_path = "res://scenes/testin.tscn"
+@export var menu_path = "res://scenes/levels/world_1_1.tscn"
 @export var login_path = "res://scenes/ui/login.tscn"
 
 var menu = load(menu_path)

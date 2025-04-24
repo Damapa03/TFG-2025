@@ -4,7 +4,7 @@ extends Button
 @onready var passWordInputText: TextEdit = $"../PasswordInputText"
 var emailInputText: TextEdit
 
-@export var menu_path = "res://scenes/testin.tscn"
+@export var menu_path = "res://scenes/levels/world_1_1.tscn"
 @export var register_path = "res://scenes/ui/register.tscn"
 
 var menu = load(menu_path)
