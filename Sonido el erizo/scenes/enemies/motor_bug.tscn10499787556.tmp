@@ -5,12 +5,6 @@
 [ext_resource type="Texture2D" uid="uid://bysn65ibn83r6" path="res://assets/enemies/Motorbug/MotorBug-Idle-Sheet 64x64.png" id="1_n52nx"]
 [ext_resource type="PackedScene" uid="uid://yx4gw4gce2lu" path="res://scenes/enemies/enemie_state_machine.tscn" id="3_6husq"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6husq"]
-size = Vector2(20, 27)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyk3b"]
-size = Vector2(44, 35)
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tyk3b"]
 animation = &"hurt"
 
@@ -24,29 +18,30 @@ advance_mode = 2
 
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_tyk3b"]
 states/hurt/node = SubResource("AnimationNodeAnimation_tyk3b")
-states/hurt/position = Vector2(606, 106)
+states/hurt/position = Vector2(550, 73)
 states/walk/node = SubResource("AnimationNodeAnimation_aufyd")
-states/walk/position = Vector2(415, 106)
+states/walk/position = Vector2(364, 79)
 transitions = ["Start", "walk", SubResource("AnimationNodeStateMachineTransition_2e20l"), "walk", "hurt", SubResource("AnimationNodeStateMachineTransition_sm85u")]
+graph_offset = Vector2(-44, -11)
 
 [sub_resource type="Animation" id="Animation_aufyd"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("../Sprite2D:hframes")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [null]
+"values": [1]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/path = NodePath("../Sprite2D:vframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -58,19 +53,19 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/path = NodePath("../Sprite2D:texture")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [1]
+"values": [ExtResource("1_n52nx")]
 }
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/path = NodePath("../Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -81,13 +76,12 @@ tracks/3/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_2e20l"]
-resource_name = "walk"
-length = 0.13334
-step = 0.0666667
+resource_name = "hurt"
+length = 0.06667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("../Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -99,7 +93,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/path = NodePath("../Sprite2D:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -111,7 +105,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/path = NodePath("../Sprite2D:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -123,25 +117,24 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/path = NodePath("../Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.0666667),
+"times": PackedFloat32Array(0, 0.0333333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
 "values": [0, 1]
 }
 
-[sub_resource type="Animation" id="Animation_sm85u"]
-resource_name = "hurt"
-length = 0.266673
+[sub_resource type="Animation" id="Animation_tyk3b"]
+resource_name = "walk"
+length = 0.133337
 loop_mode = 1
-step = 0.0666667
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:texture")
+tracks/0/path = NodePath("../Sprite2D:texture")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -153,7 +146,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Sprite2D:hframes")
+tracks/1/path = NodePath("../Sprite2D:hframes")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -165,7 +158,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Sprite2D:vframes")
+tracks/2/path = NodePath("../Sprite2D:vframes")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -177,31 +170,41 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Sprite2D:frame")
+tracks/3/path = NodePath("../Sprite2D:frame")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.0666667, 0.133333, 0.2),
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.1),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 1,
 "values": [0, 1, 2, 3]
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_lb0hx"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_sm85u"]
 _data = {
 &"RESET": SubResource("Animation_aufyd"),
 &"hurt": SubResource("Animation_2e20l"),
-&"walk": SubResource("Animation_sm85u")
+&"walk": SubResource("Animation_tyk3b")
 }
 
-[node name="MotorBug" type="CharacterBody2D" node_paths=PackedStringArray("hit_state", "rayCastRight", "rayCastLeft", "rayCastDownRight", "rayCastDownLeft", "sprite2D")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6husq"]
+size = Vector2(20, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tyk3b"]
+size = Vector2(28, 33)
+
+[node name="MotorBug" type="CharacterBody2D" node_paths=PackedStringArray("hit_state", "sprite2D", "rayCastRight", "rayCastLeft", "rayCastDownRight", "rayCastDownLeft")]
 script = ExtResource("1_6husq")
+SPEED = null
 hit_state = NodePath("EnemieStateMachine/hit")
+sprite2D = NodePath("Sprite2D")
 rayCastRight = NodePath("RayCast\'s/RayCastRight")
 rayCastLeft = NodePath("RayCast\'s/RayCastLeft")
 rayCastDownRight = NodePath("RayCast\'s/RayCastDownRight")
 rayCastDownLeft = NodePath("RayCast\'s/RayCastDownLeft")
-sprite2D = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_n52nx")
 
 [node name="EnemieStateMachine" parent="." node_paths=PackedStringArray("currentState", "character", "animationTree") instance=ExtResource("3_6husq")]
 currentState = NodePath("walk")
@@ -217,6 +220,18 @@ offset_left = -20.0
 offset_top = -53.0
 offset_right = 20.0
 offset_bottom = -30.0
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath(".")
+tree_root = SubResource("AnimationNodeStateMachine_tyk3b")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimationTree")
+libraries = {
+&"": SubResource("AnimationLibrary_sm85u")
+}
+autoplay = "walk"
 
 [node name="RayCast\'s" type="Node2D" parent="."]
 
@@ -245,22 +260,9 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, 0.5)
+position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_tyk3b")
 
-[node name="AnimationTree" type="AnimationTree" parent="."]
-tree_root = SubResource("AnimationNodeStateMachine_tyk3b")
-anim_player = NodePath("../AnimationPlayer")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_lb0hx")
-}
-autoplay = "walk"
-
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
-[connection signal="animation_finished" from="AnimationTree" to="EnemieStateMachine/hit" method="_on_animation_tree_animation_finished"]
 
 [editable path="EnemieStateMachine"]

@@ -1,13 +1,12 @@
 extends CharacterBody2D
 
-
 @export var SPEED = 40.0
 @export var hit_state: State
-@export var sprite2D: Sprite2D
 @export var rayCastRight: RayCast2D
 @export var rayCastLeft: RayCast2D
 @export var rayCastDownRight: RayCast2D
 @export var rayCastDownLeft: RayCast2D
+@export var sprite2D: Sprite2D
 
 @onready var stateMachine: StateMachine = $EnemieStateMachine
 
@@ -46,3 +45,11 @@ func _physics_process(delta: float) -> void:
 		facint = -1
 
 	move_and_slide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if body is CharacterBody2D:
+		var body_state_machine = body.get_node("StateMachine")
+		var current_state = body_state_machine.currentState
+		if current_state is AirState or current_state is AttackState:
+			stateMachine.switch_states(hit_state)

@@ -1,11 +1,15 @@
-extends State
+class_name Hit_state extends State
+
+@export var dead_state: State
+@export var stateMachine: StateMachine
+@export var hit_animation: String = "hurt"
+
+func on_enter():
+	stateMachine.currentState = self
+	playback.start(hit_animation)
+	stateMachine.switch_states(dead_state)
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "hurt":
+		character.queue_free()

@@ -8,8 +8,8 @@ class_name Run_State extends State
 func state_process(delta: float):
 	print(character.SPEED)
 	character.SPEED += 20
-	if character.SPEED >= 2000:
-		character.SPEED = 2000
+	if character.SPEED >= 1000:
+		character.SPEED = 1000
 		
 	if character.velocity == Vector2.ZERO:
 		character.SPEED = character._SPEED
