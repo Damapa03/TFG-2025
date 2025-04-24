@@ -212,6 +212,9 @@ animationTree = NodePath("../AnimationTree")
 dead_state = NodePath("../dead")
 stateMachine = NodePath("..")
 
+[node name="walk" parent="EnemieStateMachine" index="1"]
+can_move = true
+
 [node name="Label" parent="EnemieStateMachine" index="3"]
 offset_left = -20.0
 offset_top = -53.0
