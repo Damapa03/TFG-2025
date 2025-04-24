@@ -1,5 +1,6 @@
 class_name CrouchState extends State
 
+@export var spinDash_state: State
 @export var ground_state: State
 
 func state_input(event: InputEvent):
@@ -13,4 +14,4 @@ func on_exit():
 	playback.travel("Start")
 
 func spinDash():
-	pass
+	next_state = spinDash_state

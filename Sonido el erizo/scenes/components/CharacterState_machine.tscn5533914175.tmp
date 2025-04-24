@@ -41,9 +41,8 @@ dead_state = NodePath("../DeadState")
 stateMachine = NodePath("..")
 can_move = true
 
-[node name="CrouchState" type="Node" parent="." node_paths=PackedStringArray("spinDash_state", "ground_state")]
+[node name="CrouchState" type="Node" parent="." node_paths=PackedStringArray("ground_state")]
 script = ExtResource("5_l0k2u")
-spinDash_state = NodePath("../SpindashState")
 ground_state = NodePath("../GroundState")
 can_move = true
 
@@ -63,17 +62,12 @@ air_state = NodePath("../AirState")
 ground_state = NodePath("../GroundState")
 can_move = true
 
-[node name="SpindashState" type="Node" parent="." node_paths=PackedStringArray("run_state")]
+[node name="SpindashState" type="Node" parent="."]
 script = ExtResource("10_y5ggk")
-run_state = NodePath("../RunState")
-
-[node name="Timer" type="Timer" parent="SpindashState"]
-one_shot = true
 
 [node name="DeadState" type="Node" parent="."]
 script = ExtResource("10_ai5su")
 
 [node name="Death_timer" type="Timer" parent="DeadState"]
 
-[connection signal="timeout" from="SpindashState/Timer" to="SpindashState" method="_on_timer_timeout"]
 [connection signal="timeout" from="DeadState/Death_timer" to="DeadState" method="_on_death_timer_timeout"]
