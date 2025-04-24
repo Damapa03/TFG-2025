@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://uwlga7vtw57a" path="res://scripts/state_machine/StateLabel.gd" id="2_oipgn"]
 [ext_resource type="Script" uid="uid://ddifhnnis0cud" path="res://scripts/state_machine/air_state.gd" id="3_227bp"]
 [ext_resource type="Script" uid="uid://gbncboe6vqqv" path="res://scripts/state_machine/ground_state.gd" id="4_0d6a3"]
-[ext_resource type="Script" uid="uid://dvrftwmchb2k6" path="res://scripts/state_machine/hit_state.gd" id="5_5dn32"]
+[ext_resource type="Script" uid="uid://dvrftwmchb2k6" path="res://scripts/state_machine/enemie_hit_state.gd" id="5_5dn32"]
 [ext_resource type="Script" uid="uid://cxpgd6i0s3ifw" path="res://scripts/state_machine/crouch_state.gd" id="5_l0k2u"]
 [ext_resource type="Script" uid="uid://bcqec81sn8xpa" path="res://scripts/state_machine/attack_state.gd" id="6_oipgn"]
 [ext_resource type="Script" path="res://scripts/state_machine/walk_state.gd" id="8_odelu"]

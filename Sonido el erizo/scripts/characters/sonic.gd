@@ -3,10 +3,12 @@ extends CharacterBody2D
 @export var _SPEED = 300
 @export var jumpVelocity = -400.0
 @export var friction = 2000.0
+@export var hit_state: State
 
 @onready var animationTree: AnimationTree = $AnimationTree
 @onready var sprite2D: Sprite2D = $Sprite2D
 @onready var stateMachine: StateMachine = $StateMachine
+
 
 var SPEED = _SPEED
 
@@ -34,3 +36,9 @@ func _physics_process(delta: float) -> void:
 
 
 	move_and_slide()
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("Hit")
+	if !(stateMachine.currentState is AttackState or stateMachine.currentState is AirState):
+		stateMachine.switch_states(hit_state)
