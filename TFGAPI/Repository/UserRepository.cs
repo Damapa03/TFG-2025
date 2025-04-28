@@ -28,22 +28,25 @@ public class UserRepository : ControllerBase
         try
         {
             // Convierte el DTO a un diccionario
-            var userData = DataConverter.ToDictionary(usuario);
+            // var userData = DataConverter.ToDictionary(usuario);
 
-            // Obtiene el usuario de la base de datos mediante el nombre de usuario
-            User? user = await getUser(userData["user"].ToString()!);
+            // // Obtiene el usuario de la base de datos mediante el nombre de usuario
+            // User? user = await getUser(userData["user"].ToString()!);
 
-            // Si no se encuentra el usuario, lanza una excepción personalizada
-            if (user == null)
-            {
-                throw new UserNotFoundException("El usuario no existe");
-            }
+            // // Si no se encuentra el usuario, lanza una excepción personalizada
+            // if (user == null)
+            // {
+            //     throw new UserNotFoundException("El usuario no existe");
+            // }
 
-            // Compara la contraseña proporcionada con la almacenada en la base de datos
-            if (user.password != usuario.password)
-            {
-                throw new ArgumentException("La contraseña no es correcta.");
-            }
+            // // Compara la contraseña proporcionada con la almacenada en la base de datos
+            // if (user.password != usuario.password)
+            // {
+            //     throw new ArgumentException("La contraseña no es correcta.");
+            // }
+
+
+            var firebaseApp = FirebaseApp
 
             // Si todo es correcto, devuelve un resultado de éxito
             return Ok(new

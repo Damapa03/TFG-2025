@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGApi\\TFGAPI.csproj": {}
+    "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGAPI\\TFGAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGApi\\TFGAPI.csproj": {
+    "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGAPI\\TFGAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGApi\\TFGAPI.csproj",
+        "projectUniqueName": "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGAPI\\TFGAPI.csproj",
         "projectName": "TFGAPI",
-        "projectPath": "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGApi\\TFGAPI.csproj",
+        "projectPath": "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGAPI\\TFGAPI.csproj",
         "packagesPath": "C:\\Users\\Kkdvakk\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGApi\\obj\\",
+        "outputPath": "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGAPI\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Kkdvakk\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -43,6 +43,14 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FirebaseAdmin": {
+              "target": "Package",
+              "version": "[3.2.0, )"
+            },
+            "FirebaseAuthentication.net": {
+              "target": "Package",
+              "version": "[4.1.0, )"
+            },
             "Google.Cloud.Firestore": {
               "target": "Package",
               "version": "[3.10.0, )"
