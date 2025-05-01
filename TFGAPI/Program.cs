@@ -23,6 +23,8 @@ builder.Services.AddScoped<LevelRepository>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<UserRepository>();
 
+builder.Services.AddSingleton<FirebaseAuthService>();
+
 var app = builder.Build();
 
 // Configurar el pipeline de la aplicación

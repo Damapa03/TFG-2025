@@ -102,4 +102,8 @@ c:\Users\Kkdvakk\Desktop\TFG\TFGAPI\bin\Debug\net8.0\System.CodeDom.dll
 c:\Users\Kkdvakk\Desktop\TFG\TFGAPI\bin\Debug\net8.0\System.Linq.Async.dll
 c:\Users\Kkdvakk\Desktop\TFG\TFGAPI\bin\Debug\net8.0\System.Management.dll
 c:\Users\Kkdvakk\Desktop\TFG\TFGAPI\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Management.dll
-c:\Users\Kkdvakk\Desktop\TFG\TFGAPI\bin\Debug\net8.0\utils\certs\tfg-proyecto-b5f17-firebase-adminsdk-fbsvc-4c124b9bbf.json
+c:\Users\Kkdvakk\Desktop\TFG\TFGAPI\bin\Debug\net8.0\utils\certs\tfg-proyecto-b5f17-firebase-adminsdk-fbsvc-39b6d23c61.json
+c:\Users\Kkdvakk\Desktop\TFG\TFGAPI\bin\Debug\net8.0\FirebaseAdmin.dll
+c:\Users\Kkdvakk\Desktop\TFG\TFGAPI\bin\Debug\net8.0\Firebase.Auth.dll
+c:\Users\Kkdvakk\Desktop\TFG\TFGAPI\bin\Debug\net8.0\Google.Api.Gax.Rest.dll
+c:\Users\Kkdvakk\Desktop\TFG\TFGAPI\obj\Debug\net8.0\TFGAPI.sourcelink.json

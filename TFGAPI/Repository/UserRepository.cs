@@ -4,6 +4,7 @@ using Google.Cloud.Firestore;
 using TFGApi.utils;
 using TFGApi.Models;
 using TFGApi.Error;
+using FirebaseAdmin.Auth;
 
 namespace TFGApi.Repository;
 
@@ -12,12 +13,14 @@ public class UserRepository : ControllerBase
 {
     // Declara variables privadas para la conexión a Firestore y la colección de usuarios
     private readonly FirestoreDb _db;
+    private readonly FirebaseAuth _auth;
     private readonly CollectionReference _usersRef;
 
     // Constructor que recibe una instancia de DAO y establece la conexión con Firestore
     public UserRepository(DAO dao)
     {
         _db = dao.GetDbConnection();  // Obtiene la conexión a la base de datos
+        _auth = dao.GetFirebaseAuth();
         _usersRef = _db.Collection("Users");  // Referencia a la colección "Users" en Firestore
     }
 
@@ -28,31 +31,31 @@ public class UserRepository : ControllerBase
         try
         {
             // Convierte el DTO a un diccionario
-            // var userData = DataConverter.ToDictionary(usuario);
+            var userData = DataConverter.ToDictionary(usuario);
 
-            // // Obtiene el usuario de la base de datos mediante el nombre de usuario
-            // User? user = await getUser(userData["user"].ToString()!);
+            // Obtiene el usuario de la base de datos mediante el nombre de usuario
+            User? user = await getUser(userData["user"].ToString()!);
 
-            // // Si no se encuentra el usuario, lanza una excepción personalizada
-            // if (user == null)
-            // {
-            //     throw new UserNotFoundException("El usuario no existe");
-            // }
+            // Si no se encuentra el usuario, lanza una excepción personalizada
+            if (user == null)
+            {
+                throw new UserNotFoundException("El usuario no existe");
+            }
 
-            // // Compara la contraseña proporcionada con la almacenada en la base de datos
-            // if (user.password != usuario.password)
-            // {
-            //     throw new ArgumentException("La contraseña no es correcta.");
-            // }
+            // Comprobamos que el correo del usuario esta registrado en el auth
+            await _auth.GetUserByEmailAsync(user.email);
 
+            // Compara la contraseña proporcionada con la almacenada en la base de datos
+            if (user.password != usuario.password)
+            {
+                throw new ArgumentException("La contraseña no es correcta.");
+            }
 
-            var firebaseApp = FirebaseApp
 
             // Si todo es correcto, devuelve un resultado de éxito
             return Ok(new
             {
-                message = "Login realizado correctamente",
-                estado = true
+                message = "Login realizado correctamente"
             });
         }
         catch (Exception ex)
