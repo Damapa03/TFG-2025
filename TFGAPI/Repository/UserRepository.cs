@@ -141,6 +141,24 @@ public class UserRepository : ControllerBase
         }
     }
 
+    public async Task<QuerySnapshot> getUsers()
+    {
+        try
+        {
+            
+            QuerySnapshot snapshot = await _usersRef.GetSnapshotAsync();
+
+            return snapshot;
+
+        }
+        catch (Exception e)
+        {
+            // Si ocurre una excepción en la consulta, lanza una excepción personalizada
+            throw new UserServiceException("Error al realizar la operación", e);
+        }
+    }
+    
+
     // Método para actualizar los datos de "Characters" de un usuario específico
     public async Task<ObjectResult> putUserCharacters(UserUpdateDTO userCharacters, string id)
     {

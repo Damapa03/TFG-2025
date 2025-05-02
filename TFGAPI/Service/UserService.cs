@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using TFGApi.Models;
 using System.Text.RegularExpressions;
 using TFGApi.Error;
+using Google.Cloud.Firestore;
 
 namespace TFGApi.Service;
 
@@ -50,7 +51,7 @@ public class UserService
         }
 
         // Verifica si el usuario ya existe consultando el repositorio
-        var checkUserResult = await _userRepository.getUser(user.usuario);
+        var checkUserResult = await CheckUserUsername(user.usuario);
 
         if (checkUserResult != null)
         {
@@ -100,5 +101,28 @@ public class UserService
 
         // Llama al repositorio para actualizar los "Characters" del usuario
         return await _userRepository.putUserCharacters(userCharacters, checkUserResult.id!);
+    }
+
+
+    public async Task<List<DocumentSnapshot>> CheckUserUsername(string username)
+    {
+        QuerySnapshot users = await _userRepository.getUsers();
+
+        var resultado = new List<DocumentSnapshot>();
+    
+
+        foreach (DocumentSnapshot doc in users.Documents)
+        {
+            if (doc.ContainsField("usuario"))
+            {
+                string usuario = doc.GetValue<string>("usuario");
+                if (usuario.ToLower() == username.ToLower())
+                {
+                    resultado.Add(doc);
+                }
+            }
+        }
+
+        return resultado;
     }
 }
