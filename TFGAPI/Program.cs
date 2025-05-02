@@ -23,7 +23,8 @@ builder.Services.AddScoped<LevelRepository>();
 builder.Services.AddScoped<UserService>();
 builder.Services.AddScoped<UserRepository>();
 
-builder.Services.AddSingleton<FirebaseAuthService>();
+builder.Services.AddScoped<PasswordHasher>();
+
 
 var app = builder.Build();
 

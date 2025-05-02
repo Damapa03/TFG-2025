@@ -15,13 +15,15 @@ public class UserRepository : ControllerBase
     private readonly FirestoreDb _db;
     private readonly FirebaseAuth _auth;
     private readonly CollectionReference _usersRef;
+    private readonly string _salt;
 
     // Constructor que recibe una instancia de DAO y establece la conexión con Firestore
-    public UserRepository(DAO dao)
+    public UserRepository(DAO dao, PasswordHasher passwordHasher)
     {
         _db = dao.GetDbConnection();  // Obtiene la conexión a la base de datos
         _auth = dao.GetFirebaseAuth();
         _usersRef = _db.Collection("Users");  // Referencia a la colección "Users" en Firestore
+        _salt = Guid.NewGuid().ToString();
     }
 
     // Método para manejar el login de un usuario
@@ -46,7 +48,7 @@ public class UserRepository : ControllerBase
             await _auth.GetUserByEmailAsync(user.email);
 
             // Compara la contraseña proporcionada con la almacenada en la base de datos
-            if (user.password != usuario.password)
+            if (PasswordHasher.VerifyPassword(usuario.password, _salt, user.password))
             {
                 throw new ArgumentException("La contraseña no es correcta.");
             }
@@ -73,11 +75,22 @@ public class UserRepository : ControllerBase
             // Crea un nuevo objeto de usuario con los datos proporcionados
             User newUser = new User(
                 null,  // El ID se genera automáticamente en Firestore
-                user.usuario,  // Nombre de usuario
+                user.usuario,  // Nombre de usuarioz
                 user.email,  // Correo electrónico
-                user.password,  // Contraseña
+                PasswordHasher.HashPassword(user.password, _salt),  // Contraseña
                 new Characters(false, false, false, false)  // Establece los valores predeterminados para "Characters"
             );
+
+            UserRecordArgs args = new UserRecordArgs()
+            {
+                Email = user.email,
+                EmailVerified = false,
+                Password = user.password,
+                DisplayName = user.usuario,
+                Disabled = false,
+            };
+
+            await _auth.CreateUserAsync(args);
 
             // Convierte el nuevo usuario a un diccionario
             var userData = DataConverter.ToDictionary(newUser);
