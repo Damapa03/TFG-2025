@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://yx4gw4gce2lu"]
 
 [ext_resource type="Script" uid="uid://cvswl5mgwme65" path="res://scripts/state_machine/stateMachine.gd" id="1_6lw2b"]
-[ext_resource type="Script" uid="uid://dvrftwmchb2k6" path="res://scripts/state_machine/enemie_hit_state.gd" id="2_57aak"]
+[ext_resource type="Script" path="res://scripts/state_machine/enemie_hit_state.gd" id="2_57aak"]
 [ext_resource type="Script" uid="uid://c341r7njyslyw" path="res://state.gd" id="2_574fu"]
 [ext_resource type="Script" uid="uid://uwlga7vtw57a" path="res://scripts/state_machine/StateLabel.gd" id="2_tt37q"]
 

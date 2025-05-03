@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://c46hxhtd70pna" path="res://scenes/miscelaneous/green_gem.tscn" id="4_mponu"]
 [ext_resource type="PackedScene" uid="uid://dps8oqjnqfep" path="res://scenes/miscelaneous/ring.tscn" id="5_1r51i"]
 [ext_resource type="PackedScene" uid="uid://0offw7jyhcgf" path="res://scenes/miscelaneous/bumper.tscn" id="5_fcifr"]
-[ext_resource type="PackedScene" uid="uid://cb23de4pf0o6t" path="res://scenes/miscelaneous/goal.tscn" id="7_lpnjq"]
-[ext_resource type="PackedScene" uid="uid://cgeb1tkrepdsu" path="res://scenes/miscelaneous/goal_ring.tscn" id="8_7pdhl"]
+[ext_resource type="PackedScene" path="res://scenes/miscelaneous/goal.tscn" id="7_lpnjq"]
+[ext_resource type="PackedScene" path="res://scenes/miscelaneous/goal_ring.tscn" id="8_7pdhl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mponu"]
 texture = ExtResource("3_tx344")
