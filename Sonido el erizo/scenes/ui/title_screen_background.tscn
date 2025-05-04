@@ -1,11 +1,15 @@
-[gd_scene load_steps=16 format=3 uid="uid://ia3xmq5g0ybp"]
+[gd_scene load_steps=28 format=3 uid="uid://ia3xmq5g0ybp"]
 
 [ext_resource type="Texture2D" uid="uid://dc5ad6oykifsw" path="res://assets/miscelaneous/titleScreen/Sky-Background-Sprite 512x160.png" id="1_7hyco"]
+[ext_resource type="Script" uid="uid://cuyvibyadnktd" path="res://scenes/ui/title_screen_background.gd" id="1_78jvw"]
 [ext_resource type="Texture2D" uid="uid://dcflcfqqprvme" path="res://assets/miscelaneous/titleScreen/Water-Background-Sprite 1026x130.png" id="2_8e7ma"]
 [ext_resource type="Texture2D" uid="uid://df7vgb8euhkuk" path="res://assets/miscelaneous/titleScreen/EggIsland-TitleScreen-Sprite 320x59.png" id="3_wu12c"]
 [ext_resource type="Texture2D" uid="uid://cwg82jj7cbm82" path="res://assets/miscelaneous/titleScreen/Cloud1-TitleScreen-Sprite 174x64.png" id="4_7gkfe"]
 [ext_resource type="Texture2D" uid="uid://5og8yq8ky8f" path="res://assets/miscelaneous/titleScreen/Cloud2-TitleScreen-Sprite 112x64.png" id="5_78jvw"]
 [ext_resource type="Texture2D" uid="uid://b2knfrmt1q155" path="res://assets/miscelaneous/titleScreen/Cloud3-TitleScreen-Sprite 176x64.png" id="6_i7p1m"]
+[ext_resource type="Texture2D" uid="uid://fv2b0441knqq" path="res://assets/miscelaneous/titleScreen/EmblemaSonic-Sprite 217x158.png" id="7_8e7ma"]
+[ext_resource type="Texture2D" uid="uid://b2t8vrbd82ndd" path="res://assets/miscelaneous/titleScreen/SonicIntro-Sprite 93x118.png" id="8_7gkfe"]
+[ext_resource type="Texture2D" uid="uid://drqukixjjt3nv" path="res://assets/miscelaneous/titleScreen/TituloSonic-Sprite 192x83.png" id="9_78jvw"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oq8ye"]
 atlas = ExtResource("2_8e7ma")
@@ -71,8 +75,69 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7p1m"]
+atlas = ExtResource("8_7gkfe")
+region = Rect2(0, 0, 93, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d1066"]
+atlas = ExtResource("8_7gkfe")
+region = Rect2(93, 0, 93, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rahdx"]
+atlas = ExtResource("8_7gkfe")
+region = Rect2(186, 0, 93, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_do8i8"]
+atlas = ExtResource("8_7gkfe")
+region = Rect2(0, 118, 93, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qo6t7"]
+atlas = ExtResource("8_7gkfe")
+region = Rect2(93, 118, 93, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8guub"]
+atlas = ExtResource("8_7gkfe")
+region = Rect2(186, 118, 93, 118)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7goc1"]
+atlas = ExtResource("8_7gkfe")
+region = Rect2(0, 236, 93, 118)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hvhfw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7p1m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d1066")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rahdx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_do8i8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qo6t7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8guub")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7goc1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7p1m")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
 [node name="TitleScreen_Background" type="Node2D"]
 texture_filter = 1
+script = ExtResource("1_78jvw")
 
 [node name="Parallax2D" type="Parallax2D" parent="."]
 ignore_camera_scroll = true
@@ -87,7 +152,7 @@ position = Vector2(576, 538.5)
 scale = Vector2(4.51765, 3.45312)
 sprite_frames = SubResource("SpriteFrames_d1066")
 autoplay = "default"
-frame_progress = 0.569925
+frame_progress = 0.0152194
 
 [node name="Parallax2D2" type="Parallax2D" parent="."]
 ignore_camera_scroll = true
@@ -121,3 +186,23 @@ z_index = 1
 position = Vector2(942, 110)
 scale = Vector2(2.39773, 3.3125)
 texture = ExtResource("6_i7p1m")
+
+[node name="Parallax2D4" type="Parallax2D" parent="."]
+z_index = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D4"]
+position = Vector2(591.25, 231.25)
+scale = Vector2(1.78111, 1.52532)
+texture = ExtResource("7_8e7ma")
+
+[node name="Sonic" type="AnimatedSprite2D" parent="Parallax2D4"]
+position = Vector2(607.25, 186.25)
+scale = Vector2(1.79167, 1.80085)
+sprite_frames = SubResource("SpriteFrames_hvhfw")
+frame = 7
+frame_progress = 1.0
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D4"]
+position = Vector2(594.25, 345.25)
+scale = Vector2(1.70833, 1.75301)
+texture = ExtResource("9_78jvw")

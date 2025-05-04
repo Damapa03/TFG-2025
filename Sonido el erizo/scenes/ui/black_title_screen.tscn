@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://dvl8bm4dq2o7e"]
+
+[ext_resource type="Script" uid="uid://bp6844vfkkuoj" path="res://scripts/ui/black_title_screen.gd" id="1_ca7o6"]
+[ext_resource type="Texture2D" uid="uid://i7fh3ww2wh2l" path="res://assets/miscelaneous/titleScreen/SonicIntroBlack-Sprite 101x128.png" id="1_i3rq7"]
+[ext_resource type="Texture2D" uid="uid://cv06p607eaasm" path="res://assets/miscelaneous/titleScreen/BlackBackground-Sprite 64x64.png" id="2_ca7o6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3e4mu"]
+atlas = ExtResource("1_i3rq7")
+region = Rect2(0, 0, 101, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t1cel"]
+atlas = ExtResource("1_i3rq7")
+region = Rect2(103, 0, 101, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_njghj"]
+atlas = ExtResource("1_i3rq7")
+region = Rect2(0, 130, 101, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqh3i"]
+atlas = ExtResource("1_i3rq7")
+region = Rect2(103, 130, 101, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xcvhv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3e4mu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t1cel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_njghj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xqh3i")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="BlackTitleScreen" type="Node2D"]
+script = ExtResource("1_ca7o6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(580.25, 204.25)
+scale = Vector2(1.801, 1.801)
+sprite_frames = SubResource("SpriteFrames_xcvhv")
+autoplay = "default"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(577.5, 324.5)
+scale = Vector2(18.0156, 10.1406)
+texture = ExtResource("2_ca7o6")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
