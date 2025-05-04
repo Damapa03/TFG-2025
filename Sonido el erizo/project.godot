@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="TFG-Juego"
-run/main_scene="uid://cncephtabaa3p"
+run/main_scene="uid://ckvjbhl1adwfb"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SignalBus="*res://signal_bus.gd"
 
 [global_group]
 
