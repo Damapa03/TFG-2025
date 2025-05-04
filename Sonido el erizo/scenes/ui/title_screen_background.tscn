@@ -1,0 +1,123 @@
+[gd_scene load_steps=16 format=3 uid="uid://ia3xmq5g0ybp"]
+
+[ext_resource type="Texture2D" uid="uid://dc5ad6oykifsw" path="res://assets/miscelaneous/titleScreen/Sky-Background-Sprite 512x160.png" id="1_7hyco"]
+[ext_resource type="Texture2D" uid="uid://dcflcfqqprvme" path="res://assets/miscelaneous/titleScreen/Water-Background-Sprite 1026x130.png" id="2_8e7ma"]
+[ext_resource type="Texture2D" uid="uid://df7vgb8euhkuk" path="res://assets/miscelaneous/titleScreen/EggIsland-TitleScreen-Sprite 320x59.png" id="3_wu12c"]
+[ext_resource type="Texture2D" uid="uid://cwg82jj7cbm82" path="res://assets/miscelaneous/titleScreen/Cloud1-TitleScreen-Sprite 174x64.png" id="4_7gkfe"]
+[ext_resource type="Texture2D" uid="uid://5og8yq8ky8f" path="res://assets/miscelaneous/titleScreen/Cloud2-TitleScreen-Sprite 112x64.png" id="5_78jvw"]
+[ext_resource type="Texture2D" uid="uid://b2knfrmt1q155" path="res://assets/miscelaneous/titleScreen/Cloud3-TitleScreen-Sprite 176x64.png" id="6_i7p1m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oq8ye"]
+atlas = ExtResource("2_8e7ma")
+region = Rect2(0, 0, 255, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwe24"]
+atlas = ExtResource("2_8e7ma")
+region = Rect2(257, 0, 255, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k6pf"]
+atlas = ExtResource("2_8e7ma")
+region = Rect2(514, 0, 255, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3h4cm"]
+atlas = ExtResource("2_8e7ma")
+region = Rect2(771, 0, 255, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5w7r"]
+atlas = ExtResource("2_8e7ma")
+region = Rect2(0, 66, 255, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eydwg"]
+atlas = ExtResource("2_8e7ma")
+region = Rect2(257, 66, 255, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ap3f5"]
+atlas = ExtResource("2_8e7ma")
+region = Rect2(514, 66, 255, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksmu6"]
+atlas = ExtResource("2_8e7ma")
+region = Rect2(771, 66, 255, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_d1066"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oq8ye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwe24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k6pf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3h4cm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u5w7r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eydwg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap3f5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ksmu6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="TitleScreen_Background" type="Node2D"]
+texture_filter = 1
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+ignore_camera_scroll = true
+
+[node name="Sky" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(577, 214)
+scale = Vector2(2.25, 2.6625)
+texture = ExtResource("1_7hyco")
+
+[node name="Water" type="AnimatedSprite2D" parent="Parallax2D"]
+position = Vector2(576, 538.5)
+scale = Vector2(4.51765, 3.45312)
+sprite_frames = SubResource("SpriteFrames_d1066")
+autoplay = "default"
+frame_progress = 0.569925
+
+[node name="Parallax2D2" type="Parallax2D" parent="."]
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2"]
+z_index = 1
+position = Vector2(588, 361)
+scale = Vector2(2.18438, 2.31356)
+texture = ExtResource("3_wu12c")
+
+[node name="Parallax2D3" type="Parallax2D" parent="."]
+repeat_size = Vector2(1118, 0)
+autoscroll = Vector2(-68, 0)
+repeat_times = 2
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D3"]
+z_index = 1
+position = Vector2(228, 95)
+scale = Vector2(2.20115, 2.3125)
+texture = ExtResource("4_7gkfe")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Parallax2D3"]
+z_index = 1
+position = Vector2(591, 106)
+scale = Vector2(3, 2.96875)
+texture = ExtResource("5_78jvw")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Parallax2D3"]
+z_index = 1
+position = Vector2(942, 110)
+scale = Vector2(2.39773, 3.3125)
+texture = ExtResource("6_i7p1m")

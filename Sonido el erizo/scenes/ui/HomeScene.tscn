@@ -1,4 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckvjbhl1adwfb"]
+[gd_scene load_steps=3 format=3 uid="uid://ckvjbhl1adwfb"]
+
+[ext_resource type="PackedScene" uid="uid://ia3xmq5g0ybp" path="res://scenes/ui/title_screen_background.tscn" id="1_cdfcw"]
 
 [sub_resource type="GDScript" id="GDScript_b0452"]
 script/source = "extends Control
@@ -42,28 +44,32 @@ grow_vertical = 2
 script = SubResource("GDScript_b0452")
 
 [node name="LoginButton" type="Button" parent="."]
-offset_left = 353.0
-offset_top = 511.0
-offset_right = 499.0
-offset_bottom = 542.0
+layout_mode = 0
+offset_left = 396.0
+offset_top = 587.0
+offset_right = 542.0
+offset_bottom = 618.0
 text = "Login"
 
 [node name="UserInputText" type="TextEdit" parent="."]
-offset_left = 387.0
-offset_top = 362.0
-offset_right = 696.0
-offset_bottom = 397.0
+layout_mode = 0
+offset_left = 430.0
+offset_top = 438.0
+offset_right = 739.0
+offset_bottom = 473.0
 placeholder_text = "Usuario"
 
 [node name="PasswordInputText" type="TextEdit" parent="."]
-offset_left = 388.0
-offset_top = 417.0
-offset_right = 697.0
-offset_bottom = 452.0
+layout_mode = 0
+offset_left = 431.0
+offset_top = 493.0
+offset_right = 740.0
+offset_bottom = 528.0
 placeholder_text = "Contraseña"
 
 [node name="EmailInputText" type="TextEdit" parent="."]
 visible = false
+layout_mode = 0
 offset_left = 389.0
 offset_top = 316.0
 offset_right = 698.0
@@ -71,11 +77,15 @@ offset_bottom = 351.0
 placeholder_text = "Correo"
 
 [node name="RegisterButton" type="Button" parent="."]
-offset_left = 576.0
-offset_top = 512.0
-offset_right = 722.0
-offset_bottom = 543.0
+layout_mode = 0
+offset_left = 619.0
+offset_top = 588.0
+offset_right = 765.0
+offset_bottom = 619.0
 text = "Registrarse"
+
+[node name="TitleScreen_Background" parent="." instance=ExtResource("1_cdfcw")]
+z_index = -1
 
 [connection signal="pressed" from="LoginButton" to="." method="_on_login_button_pressed"]
 [connection signal="pressed" from="RegisterButton" to="." method="_on_register_button_pressed"]
