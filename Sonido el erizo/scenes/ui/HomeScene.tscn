@@ -10,7 +10,7 @@ script/source = "extends Control
 @onready var passWordInputText: TextEdit = $\"PasswordInputText\"
 @onready var emailInputText: TextEdit = $\"EmailInputText\"
 
-@export var menu_path = \"res://scenes/testin.tscn\"
+@export var menu_path = \"res://scenes/levels/world_1_1.tscn\"
 
 var menu = load(menu_path)
 
