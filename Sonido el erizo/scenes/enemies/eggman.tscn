@@ -1,9 +1,14 @@
-[gd_scene load_steps=25 format=3 uid="uid://cxxnwfc4hgx4m"]
+[gd_scene load_steps=32 format=3 uid="uid://cxxnwfc4hgx4m"]
 
 [ext_resource type="PackedScene" path="res://scenes/components/enemie_state_machine.tscn" id="1_n4ykf"]
 [ext_resource type="Script" uid="uid://dsii2mkus4o14" path="res://scripts/enemies/eggman.gd" id="1_ql5al"]
 [ext_resource type="Texture2D" uid="uid://datnrf5tjobpt" path="res://assets/enemies/eggma/eggCarrier-Sprite 68x60.png" id="2_t7qcn"]
+[ext_resource type="Script" uid="uid://pj700w3643s0" path="res://scenes/enemies/eggman_attack_state.gd" id="3_6nngr"]
+[ext_resource type="Script" uid="uid://bjhpoa1tau176" path="res://scenes/enemies/eggman_walk.gd" id="3_atmtb"]
 [ext_resource type="Texture2D" uid="uid://dvkm7u8ldrgpf" path="res://assets/enemies/eggma/EggmanFaces-Sprite 64x64.png" id="3_ql5al"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fmist"]
+animation = &"attack"
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_t7qcn"]
 animation = &"dead"
@@ -34,7 +39,14 @@ advance_mode = 2
 switch_mode = 2
 advance_mode = 2
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_x5j2d"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_vkqj3"]
+switch_mode = 2
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_n4ykf"]
+states/attack/node = SubResource("AnimationNodeAnimation_fmist")
+states/attack/position = Vector2(436, 241)
 states/dead/node = SubResource("AnimationNodeAnimation_t7qcn")
 states/dead/position = Vector2(534, 181)
 states/deal_damage/node = SubResource("AnimationNodeAnimation_ql5al")
@@ -43,8 +55,8 @@ states/hurt/node = SubResource("AnimationNodeAnimation_6nngr")
 states/hurt/position = Vector2(524, 32)
 states/idle/node = SubResource("AnimationNodeAnimation_atmtb")
 states/idle/position = Vector2(350, 100)
-transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_fmist"), "idle", "dead", SubResource("AnimationNodeStateMachineTransition_ql5yg"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_m0pvi"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_phm4l"), "idle", "deal_damage", SubResource("AnimationNodeStateMachineTransition_hnlhq"), "deal_damage", "idle", SubResource("AnimationNodeStateMachineTransition_2gh0l")]
-graph_offset = Vector2(-40, 2)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_fmist"), "idle", "dead", SubResource("AnimationNodeStateMachineTransition_ql5yg"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_m0pvi"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_phm4l"), "idle", "deal_damage", SubResource("AnimationNodeStateMachineTransition_hnlhq"), "deal_damage", "idle", SubResource("AnimationNodeStateMachineTransition_2gh0l"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_x5j2d"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_vkqj3")]
+graph_offset = Vector2(-31, 18)
 
 [sub_resource type="Animation" id="Animation_ql5al"]
 length = 0.001
@@ -131,6 +143,74 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_m0pvi"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D/Face:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path2D/PathFollow2D/EggCarrier:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_ql5yg"]
+resource_name = "circular_attack"
+length = 1.00001
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Path2D/PathFollow2D/Face:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Path2D/PathFollow2D/EggCarrier:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 1,
+"values": []
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Path2D/PathFollow2D:progress_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.5, 1.0]
 }
 
 [sub_resource type="Animation" id="Animation_atmtb"]
@@ -324,6 +404,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_t7qcn"]
 resource_name = "idle"
+loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -397,50 +478,10 @@ tracks/5/keys = {
 "values": [Vector2(0, -32), Vector2(0, 36)]
 }
 
-[sub_resource type="Animation" id="Animation_ql5yg"]
-resource_name = "circular_attack"
-length = 1.00001
-step = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Path2D/PathFollow2D/Face:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Path2D/PathFollow2D/EggCarrier:texture")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(),
-"transitions": PackedFloat32Array(),
-"update": 1,
-"values": []
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Path2D/PathFollow2D:progress_ratio")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.5, 1),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [0.0, 0.5, 1.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ql5yg"]
 _data = {
 &"RESET": SubResource("Animation_ql5al"),
+&"attack": SubResource("Animation_m0pvi"),
 &"circular_attack": SubResource("Animation_ql5yg"),
 &"dead": SubResource("Animation_atmtb"),
 &"deal_damage": SubResource("Animation_fmist"),
@@ -457,7 +498,10 @@ _data = {
 }
 point_count = 5
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atmtb"]
+size = Vector2(54, 62)
+
+[node name="Eggman" type="CharacterBody2D"]
 script = ExtResource("1_ql5al")
 
 [node name="EnemieStateMachine" parent="." node_paths=PackedStringArray("currentState", "character", "animationTree") instance=ExtResource("1_n4ykf")]
@@ -468,12 +512,19 @@ animationTree = NodePath("../AnimationTree")
 [node name="hit" parent="EnemieStateMachine" index="0"]
 script = null
 
+[node name="walk" parent="EnemieStateMachine" index="1" node_paths=PackedStringArray("attack_state")]
+script = ExtResource("3_atmtb")
+attack_state = NodePath("../attack")
+
 [node name="Label" parent="EnemieStateMachine" index="3"]
 offset_left = 333.0
 offset_top = 144.0
 offset_right = 373.0
 offset_bottom = 167.0
 metadata/_edit_use_anchors_ = true
+
+[node name="attack" type="Node" parent="EnemieStateMachine"]
+script = ExtResource("3_6nngr")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource("AnimationNodeStateMachine_n4ykf")
@@ -487,11 +538,11 @@ libraries = {
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, -2)
+position = Vector2(1, -179)
 shape = SubResource("RectangleShape2D_t7qcn")
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(6, 2)
+position = Vector2(10, -175)
 curve = SubResource("Curve2D_ql5al")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
@@ -510,5 +561,15 @@ frame = 1
 [node name="EggCarrier" type="Sprite2D" parent="Path2D/PathFollow2D"]
 rotation = -1.52735
 texture = ExtResource("2_t7qcn")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -178)
+shape = SubResource("RectangleShape2D_atmtb")
+
+[connection signal="timeout" from="Timer" to="EnemieStateMachine/walk" method="_on_timer_timeout"]
 
 [editable path="EnemieStateMachine"]
