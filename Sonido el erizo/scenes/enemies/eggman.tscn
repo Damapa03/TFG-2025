@@ -1,11 +1,12 @@
-[gd_scene load_steps=32 format=3 uid="uid://cxxnwfc4hgx4m"]
+[gd_scene load_steps=33 format=3 uid="uid://cxxnwfc4hgx4m"]
 
 [ext_resource type="PackedScene" path="res://scenes/components/enemie_state_machine.tscn" id="1_n4ykf"]
-[ext_resource type="Script" uid="uid://dsii2mkus4o14" path="res://scripts/enemies/eggman.gd" id="1_ql5al"]
 [ext_resource type="Texture2D" uid="uid://datnrf5tjobpt" path="res://assets/enemies/eggma/eggCarrier-Sprite 68x60.png" id="2_t7qcn"]
 [ext_resource type="Script" uid="uid://pj700w3643s0" path="res://scenes/enemies/eggman_attack_state.gd" id="3_6nngr"]
-[ext_resource type="Script" uid="uid://bjhpoa1tau176" path="res://scenes/enemies/eggman_walk.gd" id="3_atmtb"]
+[ext_resource type="Script" path="res://scenes/enemies/eggman_walk.gd" id="3_atmtb"]
 [ext_resource type="Texture2D" uid="uid://dvkm7u8ldrgpf" path="res://assets/enemies/eggma/EggmanFaces-Sprite 64x64.png" id="3_ql5al"]
+[ext_resource type="Script" uid="uid://c3v3oxo4ss1lc" path="res://scenes/enemies/eggman_hit.gd" id="3_ql5yg"]
+[ext_resource type="Script" uid="uid://cw7n6ofbpjqm6" path="res://scenes/enemies/eggman_dead.gd" id="4_fmist"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_fmist"]
 animation = &"attack"
@@ -56,7 +57,7 @@ states/hurt/position = Vector2(524, 32)
 states/idle/node = SubResource("AnimationNodeAnimation_atmtb")
 states/idle/position = Vector2(350, 100)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_fmist"), "idle", "dead", SubResource("AnimationNodeStateMachineTransition_ql5yg"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_m0pvi"), "hurt", "idle", SubResource("AnimationNodeStateMachineTransition_phm4l"), "idle", "deal_damage", SubResource("AnimationNodeStateMachineTransition_hnlhq"), "deal_damage", "idle", SubResource("AnimationNodeStateMachineTransition_2gh0l"), "idle", "attack", SubResource("AnimationNodeStateMachineTransition_x5j2d"), "attack", "idle", SubResource("AnimationNodeStateMachineTransition_vkqj3")]
-graph_offset = Vector2(-31, 18)
+graph_offset = Vector2(-3, 13)
 
 [sub_resource type="Animation" id="Animation_ql5al"]
 length = 0.001
@@ -404,7 +405,6 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_t7qcn"]
 resource_name = "idle"
-loop_mode = 2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -489,32 +489,37 @@ _data = {
 &"idle": SubResource("Animation_t7qcn")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7qcn"]
-size = Vector2(75, 67.5)
-
 [sub_resource type="Curve2D" id="Curve2D_ql5al"]
 _data = {
 "points": PackedVector2Array(-4.50789, -103.681, 4.50789, 103.681, -6, -2, 64.6131, -6.01052, -64.6131, 6.01052, -221, 156, 21.0368, 69.121, -21.0368, -69.121, -411, 37, -135.237, 5.2592, 135.237, -5.2592, -217, -134, 0, 0, 0, 0, -6, -2)
 }
 point_count = 5
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t7qcn"]
+size = Vector2(75, 67.5)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atmtb"]
 size = Vector2(54, 62)
 
-[node name="Eggman" type="CharacterBody2D"]
-script = ExtResource("1_ql5al")
+[node name="Eggman" type="CharacterBody2D" groups=["Enemies"]]
 
 [node name="EnemieStateMachine" parent="." node_paths=PackedStringArray("currentState", "character", "animationTree") instance=ExtResource("1_n4ykf")]
 currentState = NodePath("walk")
 character = NodePath("..")
 animationTree = NodePath("../AnimationTree")
 
-[node name="hit" parent="EnemieStateMachine" index="0"]
-script = null
+[node name="hit" parent="EnemieStateMachine" index="0" node_paths=PackedStringArray("dead_state")]
+script = ExtResource("3_ql5yg")
+dead_state = NodePath("../dead")
+can_move = true
 
 [node name="walk" parent="EnemieStateMachine" index="1" node_paths=PackedStringArray("attack_state")]
 script = ExtResource("3_atmtb")
 attack_state = NodePath("../attack")
+
+[node name="dead" parent="EnemieStateMachine" index="2"]
+script = ExtResource("4_fmist")
+can_move = true
 
 [node name="Label" parent="EnemieStateMachine" index="3"]
 offset_left = 333.0
@@ -534,12 +539,6 @@ anim_player = NodePath("../AnimationPlayer")
 libraries = {
 &"": SubResource("AnimationLibrary_ql5yg")
 }
-
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(1, -179)
-shape = SubResource("RectangleShape2D_t7qcn")
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(10, -175)
@@ -562,6 +561,14 @@ frame = 1
 rotation = -1.52735
 texture = ExtResource("2_t7qcn")
 
+[node name="Area2D" type="Area2D" parent="Path2D/PathFollow2D"]
+position = Vector2(176.659, 11.6838)
+rotation = -1.52735
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D"]
+position = Vector2(1, -179)
+shape = SubResource("RectangleShape2D_t7qcn")
+
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
@@ -570,6 +577,7 @@ one_shot = true
 position = Vector2(-1, -178)
 shape = SubResource("RectangleShape2D_atmtb")
 
+[connection signal="body_entered" from="Path2D/PathFollow2D/Area2D" to="EnemieStateMachine/hit" method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="EnemieStateMachine/walk" method="_on_timer_timeout"]
 
 [editable path="EnemieStateMachine"]
