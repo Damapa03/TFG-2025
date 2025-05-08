@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://ia3xmq5g0ybp"]
+[gd_scene load_steps=29 format=3 uid="uid://ikriww05ldek"]
 
 [ext_resource type="Texture2D" uid="uid://dc5ad6oykifsw" path="res://assets/miscelaneous/titleScreen/Sky-Background-Sprite 512x160.png" id="1_7hyco"]
 [ext_resource type="Script" uid="uid://cuyvibyadnktd" path="res://scenes/ui/title_screen_background.gd" id="1_78jvw"]
@@ -210,6 +210,5 @@ texture = ExtResource("9_78jvw")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_i7p1m")
-volume_db = -30.0
 autoplay = true
 parameters/looping = false
