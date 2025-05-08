@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://f6o023650mrl" path="res://scenes/characters/sonic.tscn" id="3_smt30"]
 [ext_resource type="PackedScene" uid="uid://dps8oqjnqfep" path="res://scenes/miscelaneous/ring.tscn" id="4_t82ws"]
 [ext_resource type="PackedScene" uid="uid://cc1sywkcowqsf" path="res://scenes/enemies/motor_bug.tscn" id="4_v1yw5"]
-[ext_resource type="PackedScene" uid="uid://cb23de4pf0o6t" path="res://scenes/miscelaneous/goal.tscn" id="7_7rsdm"]
-[ext_resource type="PackedScene" uid="uid://cgeb1tkrepdsu" path="res://scenes/miscelaneous/goal_ring.tscn" id="8_jbdnl"]
+[ext_resource type="PackedScene" path="res://scenes/miscelaneous/goal.tscn" id="7_7rsdm"]
+[ext_resource type="PackedScene" path="res://scenes/miscelaneous/goal_ring.tscn" id="8_jbdnl"]
 [ext_resource type="PackedScene" path="res://scenes/character_camera.tscn" id="9_jbdnl"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t82ws"]

@@ -1,7 +1,7 @@
-[gd_scene load_steps=28 format=3 uid="uid://ia3xmq5g0ybp"]
+[gd_scene load_steps=28 format=3 uid="uid://ikriww05ldek"]
 
 [ext_resource type="Texture2D" uid="uid://dc5ad6oykifsw" path="res://assets/miscelaneous/titleScreen/Sky-Background-Sprite 512x160.png" id="1_7hyco"]
-[ext_resource type="Script" uid="uid://cuyvibyadnktd" path="res://scenes/ui/title_screen_background.gd" id="1_78jvw"]
+[ext_resource type="Script" path="res://scenes/ui/title_screen_background.gd" id="1_78jvw"]
 [ext_resource type="Texture2D" uid="uid://dcflcfqqprvme" path="res://assets/miscelaneous/titleScreen/Water-Background-Sprite 1026x130.png" id="2_8e7ma"]
 [ext_resource type="Texture2D" uid="uid://df7vgb8euhkuk" path="res://assets/miscelaneous/titleScreen/EggIsland-TitleScreen-Sprite 320x59.png" id="3_wu12c"]
 [ext_resource type="Texture2D" uid="uid://cwg82jj7cbm82" path="res://assets/miscelaneous/titleScreen/Cloud1-TitleScreen-Sprite 174x64.png" id="4_7gkfe"]
