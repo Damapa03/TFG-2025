@@ -12,7 +12,6 @@ func _ready() -> void:
 	timer.start()
 
 func on_enter():
-	print("Pal timer loco")
 	timer.start()
 
 func _on_timer_timeout() -> void:

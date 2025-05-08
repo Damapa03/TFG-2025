@@ -1,5 +1,5 @@
 extends State
 
-
-func state_process(delta: float):
-	character.velocity += character.get_gravity() * delta
+func on_enter():
+	character.get_node("Physic_Collider").queue_free()
+	character.gravity = true

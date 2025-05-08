@@ -5146,19 +5146,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kkdvakk\\.nuget\\packages\\": {}
+    "C:\\Users\\damap\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGAPI\\TFGAPI.csproj",
+      "projectUniqueName": "C:\\Users\\damap\\Desktop\\TFG-2025\\TFGAPI\\TFGAPI.csproj",
       "projectName": "TFGAPI",
-      "projectPath": "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGAPI\\TFGAPI.csproj",
-      "packagesPath": "C:\\Users\\Kkdvakk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGAPI\\obj\\",
+      "projectPath": "C:\\Users\\damap\\Desktop\\TFG-2025\\TFGAPI\\TFGAPI.csproj",
+      "packagesPath": "C:\\Users\\damap\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\damap\\Desktop\\TFG-2025\\TFGAPI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\Kkdvakk\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "C:\\Users\\damap\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -5227,7 +5232,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.406/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.401/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
