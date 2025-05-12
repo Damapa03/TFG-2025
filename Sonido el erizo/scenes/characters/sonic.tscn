@@ -790,7 +790,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yhb8"]
 size = Vector2(28, 33)
 
-[node name="sonic" type="CharacterBody2D" node_paths=PackedStringArray("hit_state")]
+[node name="sonic" type="CharacterBody2D" node_paths=PackedStringArray("hit_state") groups=["jugador"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_c1csn")
