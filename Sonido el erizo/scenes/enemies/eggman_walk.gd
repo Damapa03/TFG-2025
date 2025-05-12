@@ -12,6 +12,9 @@ func _ready() -> void:
 	timer.start()
 
 func on_enter():
+	playback.start("idle")
+	character.velocity = Vector2.ZERO
+	character.position = character.original_position
 	timer.start()
 
 func _on_timer_timeout() -> void:

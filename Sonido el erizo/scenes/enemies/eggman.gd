@@ -5,6 +5,7 @@ extends CharacterBody2D
 
 @onready var animationTree: AnimationTree = $AnimationTree
 @onready var stateMachine: StateMachine = $EnemieStateMachine
+@onready var original_position = global_position
 
 var gravity = false
 

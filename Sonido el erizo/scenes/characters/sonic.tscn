@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://s2jnusjwtgfc" path="res://assets/characters/sonic/idle-Sheet 64x64.png" id="2_xxc5g"]
 [ext_resource type="PackedScene" uid="uid://dn1h0pw0o4w6t" path="res://scenes/components/CharacterState_machine.tscn" id="3_i8usl"]
 [ext_resource type="Texture2D" uid="uid://bcdy00xsjylv2" path="res://assets/characters/sonic/walk-Sheet 64x64.png" id="4_i8usl"]
-[ext_resource type="Script" uid="uid://035yuihk05ca" path="res://scripts/state_machine/character_hit_state.gd" id="4_pl84v"]
+[ext_resource type="Script" path="res://scripts/state_machine/character_hit_state.gd" id="4_pl84v"]
 [ext_resource type="Texture2D" uid="uid://cbpeduher67e7" path="res://assets/characters/sonic/run-Sheet 64x64.png" id="5_dgahb"]
 [ext_resource type="Texture2D" uid="uid://b1gy0xqgutt4e" path="res://assets/characters/sonic/dash-Sheet 64x64.png" id="6_kgugv"]
 [ext_resource type="Texture2D" uid="uid://b7k41x56gjfer" path="res://assets/characters/sonic/brake-Sheet 64x64.png" id="7_svpfj"]
@@ -790,7 +790,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4yhb8"]
 size = Vector2(28, 33)
 
-[node name="sonic" type="CharacterBody2D" node_paths=PackedStringArray("hit_state")]
+[node name="sonic" type="CharacterBody2D" node_paths=PackedStringArray("hit_state") groups=["jugador"]]
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_c1csn")
