@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cyydxm1naotgq"]
+[gd_scene load_steps=9 format=3 uid="uid://dvl8bm4dq2o7e"]
 
 [ext_resource type="Script" path="res://scripts/ui/black_title_screen.gd" id="1_ca7o6"]
 [ext_resource type="Texture2D" uid="uid://i7fh3ww2wh2l" path="res://assets/miscelaneous/titleScreen/SonicIntroBlack-Sprite 101x128.png" id="1_i3rq7"]

@@ -30,12 +30,23 @@ func attack(rnd):
 func circular_attack():
 	print("Circulo")
 	playback.start(circular_attack_animation)
+	var duracion = playback.get_current_length()
+	await get_tree().create_timer(duracion).timeout
+	to_origin()
+
 
 func ataque_atropello():
 	playback.start(sweep_attack_animation)
+	var duracion = playback.get_current_length()
+	await get_tree().create_timer(duracion).timeout
+	to_origin()
+
 	
 func ataque_golpetazo():
 	playback.start(drop_attack_animation)
+	var duracion = playback.get_current_length()
+	await get_tree().create_timer(duracion).timeout
+	to_origin()
 	
 func to_origin():
 	next_state = walk_state

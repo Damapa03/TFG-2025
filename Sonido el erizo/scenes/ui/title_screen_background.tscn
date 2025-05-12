@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://ikriww05ldek"]
+[gd_scene load_steps=28 format=3 uid="uid://ia3xmq5g0ybp"]
 
 [ext_resource type="Texture2D" uid="uid://dc5ad6oykifsw" path="res://assets/miscelaneous/titleScreen/Sky-Background-Sprite 512x160.png" id="1_7hyco"]
 [ext_resource type="Script" path="res://scenes/ui/title_screen_background.gd" id="1_78jvw"]
