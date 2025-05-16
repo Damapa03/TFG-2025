@@ -1,0 +1,111 @@
+[gd_scene load_steps=14 format=3 uid="uid://crneycy7yvhsn"]
+
+[ext_resource type="PackedScene" uid="uid://f6o023650mrl" path="res://scenes/characters/sonic.tscn" id="1_vm3ff"]
+[ext_resource type="Script" uid="uid://dhnlh1dtlicb1" path="res://scripts/level/boss_level.gd" id="1_w6hh3"]
+[ext_resource type="PackedScene" uid="uid://dps8oqjnqfep" path="res://scenes/miscelaneous/ring.tscn" id="2_6y13f"]
+[ext_resource type="Texture2D" uid="uid://dilg0o4x8ayds" path="res://assets/miscelaneous/levels/tt-gf/tt-gf-background.png" id="4_a731b"]
+[ext_resource type="PackedScene" uid="uid://jn5akofu70o6" path="res://scenes/enemies/eggman.tscn" id="4_bx5eq"]
+[ext_resource type="Texture2D" uid="uid://k0dpa66356k8" path="res://assets/miscelaneous/levels/tt-gf/general-floor-Sprite 257x97.png" id="4_meu1p"]
+[ext_resource type="Texture2D" uid="uid://di5f2ab8l40yc" path="res://assets/miscelaneous/levels/tt-gf/floor-with-metal-plant-Sprite 160x142.png" id="5_a731b"]
+[ext_resource type="Texture2D" uid="uid://cis0v1o7g10j1" path="res://assets/miscelaneous/levels/tt-gf/floor-with-plant-Sprite 80x106.png" id="6_bx5eq"]
+[ext_resource type="AudioStream" uid="uid://3oqa6ajf4a8f" path="res://assets/sound/music/Eggman Song.mp3" id="9_bx5eq"]
+[ext_resource type="PackedScene" uid="uid://c46hxhtd70pna" path="res://scenes/miscelaneous/green_gem.tscn" id="10_nhjjj"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vm3ff"]
+a = Vector2(0, 682)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_w6hh3"]
+a = Vector2(-1, 678)
+b = Vector2(0, 1)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_6ojar"]
+b = Vector2(1151, 2)
+
+[node name="Boss-Level" type="Node2D"]
+position = Vector2(4, 4)
+script = ExtResource("1_w6hh3")
+ring_scene = ExtResource("2_6y13f")
+gem_scene = ExtResource("10_nhjjj")
+punto_inicio = Vector2(2085, 518)
+punto_final = Vector2(-255, 518)
+duracion_movimiento = 5.0
+
+[node name="sonic" parent="." instance=ExtResource("1_vm3ff")]
+position = Vector2(580, 537)
+
+[node name="Eggman" parent="." instance=ExtResource("4_bx5eq")]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = -2
+texture_filter = 1
+repeat_size = Vector2(370, 288)
+autoscroll = Vector2(-30, 0)
+repeat_times = 3
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+position = Vector2(553, 299)
+scale = Vector2(0.239583, 0.266204)
+texture = ExtResource("4_a731b")
+
+[node name="Floor" type="Parallax2D" parent="."]
+z_index = -1
+repeat_size = Vector2(496, 0)
+autoscroll = Vector2(-120, 0)
+repeat_times = 3
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+position = Vector2(286, 632)
+texture = ExtResource("4_meu1p")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Floor"]
+position = Vector2(575, 577)
+texture = ExtResource("5_a731b")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Floor"]
+position = Vector2(455, 595)
+texture = ExtResource("6_bx5eq")
+
+[node name="Tope-dere" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tope-dere"]
+shape = SubResource("SegmentShape2D_vm3ff")
+
+[node name="Tope-Izq" type="StaticBody2D" parent="."]
+position = Vector2(1152, -3)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tope-Izq"]
+shape = SubResource("SegmentShape2D_w6hh3")
+
+[node name="Suelo" type="StaticBody2D" parent="."]
+position = Vector2(0, 631)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Suelo"]
+position = Vector2(0, -47)
+shape = SubResource("SegmentShape2D_6ojar")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_bx5eq")
+volume_db = -14.766
+autoplay = true
+
+[node name="Ring_timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="gem_timer" type="Timer" parent="."]
+wait_time = 15.0
+autostart = true
+
+[node name="Ring" parent="." instance=ExtResource("2_6y13f")]
+position = Vector2(513, 485)
+
+[node name="Ring2" parent="." instance=ExtResource("2_6y13f")]
+position = Vector2(592, 485)
+
+[node name="Ring3" parent="." instance=ExtResource("2_6y13f")]
+position = Vector2(691, 485)
+
+[connection signal="timeout" from="Ring_timer" to="." method="_on_ring_timer_timeout"]
+[connection signal="timeout" from="gem_timer" to="." method="_on_gem_timer_timeout"]
