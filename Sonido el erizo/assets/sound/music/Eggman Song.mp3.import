@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://3oqa6ajf4a8f"
+path="res://.godot/imported/Eggman Song.mp3-7b5aa7f4955e142ebd5b8f16f5b24e52.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/music/Eggman Song.mp3"
+dest_files=["res://.godot/imported/Eggman Song.mp3-7b5aa7f4955e142ebd5b8f16f5b24e52.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -2,6 +2,7 @@ class_name AttackState extends State
 
 @export var homming_speed = 350
 @export var steer_force = 50.0
+@export var ground_state: State 
 
 @onready var rotation = randf_range(-0.09, 0.09)
 
@@ -36,6 +37,10 @@ func seek():
 func state_process(delta: float):
 	acceleration += seek()
 	character.velocity += acceleration * delta
-	character.velocity = character.clamped(homming_speed)
+	character.velocity = character.velocity.limit_length(homming_speed)
 	rotation = character.velocity.angle()
 	character.position += character.velocity * delta
+	
+	if character.is_on_floor():
+		pass
+		next_state = ground_state
