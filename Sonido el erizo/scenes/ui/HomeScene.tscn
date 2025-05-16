@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ckvjbhl1adwfb"]
 
 [ext_resource type="PackedScene" uid="uid://ia3xmq5g0ybp" path="res://scenes/ui/title_screen_background.tscn" id="1_cdfcw"]
-[ext_resource type="PackedScene" uid="uid://dvl8bm4dq2o7e" path="res://scenes/ui/black_title_screen.tscn" id="2_1lx8k"]
+[ext_resource type="PackedScene" path="res://scenes/ui/black_title_screen.tscn" id="2_1lx8k"]
 
 [sub_resource type="GDScript" id="GDScript_b0452"]
 script/source = "extends Control
@@ -10,7 +10,7 @@ script/source = "extends Control
 @onready var passWordInputText: TextEdit = $\"PasswordInputText\"
 @onready var emailInputText: TextEdit = $\"EmailInputText\"
 
-@export var menu_path = \"res://scenes/levels/world_1_1.tscn\"
+@export var menu_path = \"res://scenes/ui/levelSelecction.tscn\"
 
 var menu = load(menu_path)
 

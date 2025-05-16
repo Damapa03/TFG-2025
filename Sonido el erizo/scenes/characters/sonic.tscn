@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://f6o023650mrl"]
+[gd_scene load_steps=69 format=3 uid="uid://f6o023650mrl"]
 
 [ext_resource type="Script" uid="uid://bpgr472lx7vid" path="res://scripts/characters/sonic.gd" id="1_c1csn"]
 [ext_resource type="Texture2D" uid="uid://s2jnusjwtgfc" path="res://assets/characters/sonic/idle-Sheet 64x64.png" id="2_xxc5g"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bcdy00xsjylv2" path="res://assets/characters/sonic/walk-Sheet 64x64.png" id="4_i8usl"]
 [ext_resource type="Script" uid="uid://035yuihk05ca" path="res://scripts/state_machine/character_hit_state.gd" id="4_pl84v"]
 [ext_resource type="Texture2D" uid="uid://cbpeduher67e7" path="res://assets/characters/sonic/run-Sheet 64x64.png" id="5_dgahb"]
+[ext_resource type="Script" uid="uid://buybodsw4s5un" path="res://scripts/state_machine/character_dead_state.gd" id="5_ynsbk"]
 [ext_resource type="Texture2D" uid="uid://b1gy0xqgutt4e" path="res://assets/characters/sonic/dash-Sheet 64x64.png" id="6_kgugv"]
 [ext_resource type="Texture2D" uid="uid://b7k41x56gjfer" path="res://assets/characters/sonic/brake-Sheet 64x64.png" id="7_svpfj"]
 [ext_resource type="Texture2D" uid="uid://ci33tdrkgny3o" path="res://assets/characters/sonic/rolling-Sheet 64x64.png" id="8_svpfj"]
@@ -836,6 +837,10 @@ can_move = false
 [node name="WalkState" parent="StateMachine" index="6" node_paths=PackedStringArray("air_state", "ground_state")]
 air_state = NodePath("../AirState")
 ground_state = NodePath("../GroundState")
+
+[node name="DeadState" parent="StateMachine" index="9"]
+script = ExtResource("5_ynsbk")
+death_animation = "dead"
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 root_node = NodePath(".")

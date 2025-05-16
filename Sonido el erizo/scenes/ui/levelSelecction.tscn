@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dfi5bs31aeevc"]
+[gd_scene load_steps=3 format=3 uid="uid://dfi5bs31aeevc"]
 
 [ext_resource type="Script" uid="uid://da736tf1kcgsr" path="res://scripts/ui/nivel_1_button.gd" id="1_0ks46"]
+[ext_resource type="Script" uid="uid://eptj42gh38ur" path="res://scripts/ui/boss_level.gd" id="2_0ptmb"]
 
 [node name="levelSelection" type="Control"]
 layout_mode = 3
@@ -12,9 +13,9 @@ grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_left = 402.0
+offset_left = 432.0
 offset_top = 249.0
-offset_right = 708.0
+offset_right = 738.0
 offset_bottom = 435.0
 
 [node name="Nivel 1" type="Button" parent="VBoxContainer"]
@@ -29,5 +30,7 @@ text = "Nivel 2"
 [node name="Boss level" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 text = "Boss level"
+script = ExtResource("2_0ptmb")
 
 [connection signal="pressed" from="VBoxContainer/Nivel 1" to="VBoxContainer/Nivel 1" method="_on_pressed"]
+[connection signal="pressed" from="VBoxContainer/Boss level" to="VBoxContainer/Boss level" method="_on_pressed"]

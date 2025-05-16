@@ -11,7 +11,7 @@ func on_enter():
 
 func _on_death_timer_timeout() -> void:
 	Engine.time_scale = 1
-	get_tree().change_scene_to_file("res://scenes/ui/login.tscn")
+	get_tree().change_scene_to_file("res://scenes/ui/levelSelecction.tscn")
 
 
 func _on_animation_tree_animation_finished(anim_name: StringName) -> void:
