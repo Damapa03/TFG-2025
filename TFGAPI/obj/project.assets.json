@@ -5151,11 +5151,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGAPI\\TFGAPI.csproj",
+      "projectUniqueName": "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGApi\\TFGAPI.csproj",
       "projectName": "TFGAPI",
-      "projectPath": "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGAPI\\TFGAPI.csproj",
+      "projectPath": "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGApi\\TFGAPI.csproj",
       "packagesPath": "C:\\Users\\Kkdvakk\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGAPI\\obj\\",
+      "outputPath": "C:\\Users\\Kkdvakk\\Desktop\\TFG\\TFGApi\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Kkdvakk\\AppData\\Roaming\\NuGet\\NuGet.Config"
