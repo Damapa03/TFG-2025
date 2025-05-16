@@ -1,0 +1,33 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfi5bs31aeevc"]
+
+[ext_resource type="Script" uid="uid://da736tf1kcgsr" path="res://scripts/ui/nivel_1_button.gd" id="1_0ks46"]
+
+[node name="levelSelection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 402.0
+offset_top = 249.0
+offset_right = 708.0
+offset_bottom = 435.0
+
+[node name="Nivel 1" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Nivel 1"
+script = ExtResource("1_0ks46")
+
+[node name="Nivel 2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Nivel 2"
+
+[node name="Boss level" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Boss level"
+
+[connection signal="pressed" from="VBoxContainer/Nivel 1" to="VBoxContainer/Nivel 1" method="_on_pressed"]
