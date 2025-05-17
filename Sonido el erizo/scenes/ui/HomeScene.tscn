@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ckvjbhl1adwfb"]
 
-[ext_resource type="PackedScene" uid="uid://ikriww05ldek" path="res://scenes/ui/title_screen_background.tscn" id="1_cdfcw"]
-[ext_resource type="PackedScene" uid="uid://cyydxm1naotgq" path="res://scenes/ui/black_title_screen.tscn" id="2_1lx8k"]
+[ext_resource type="PackedScene" uid="uid://ia3xmq5g0ybp" path="res://scenes/ui/title_screen_background.tscn" id="1_cdfcw"]
+[ext_resource type="PackedScene" path="res://scenes/ui/black_title_screen.tscn" id="2_1lx8k"]
 
 [sub_resource type="GDScript" id="GDScript_b0452"]
 script/source = "extends Control
@@ -87,6 +87,7 @@ placeholder_text = "Correo"
 
 [node name="TitleScreen_Background" parent="." instance=ExtResource("1_cdfcw")]
 z_index = -1
+script = null
 
 [node name="BlackTitleScreen" parent="." instance=ExtResource("2_1lx8k")]
 

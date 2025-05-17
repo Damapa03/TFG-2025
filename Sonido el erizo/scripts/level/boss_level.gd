@@ -1,12 +1,13 @@
 extends Node2D
 
-@onready var character: CharacterBody2D = $sonic
+var character: CharacterBody2D
 
 @export var ring_scene: PackedScene
 @export var gem_scene: PackedScene
 @onready var gem_timer: Timer = $gem_timer
 @export var punto_inicio: Vector2
 @export var punto_final: Vector2
+@export var character_spawn: Vector2
 @export var duracion_movimiento: float = 1.5
 
 @export var level_velocity: int = 40
@@ -14,6 +15,9 @@ extends Node2D
 var gem_num = 3
 
 func _ready() -> void:
+	character = Global.actual_character()
+	character.global_position = character_spawn
+	add_child(character)
 	character.friction = 1600.0
 	character.SPEED = 70
 

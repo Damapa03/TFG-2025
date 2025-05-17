@@ -1,6 +1,5 @@
-[gd_scene load_steps=14 format=3 uid="uid://crneycy7yvhsn"]
+[gd_scene load_steps=13 format=3 uid="uid://crneycy7yvhsn"]
 
-[ext_resource type="PackedScene" uid="uid://f6o023650mrl" path="res://scenes/characters/sonic.tscn" id="1_vm3ff"]
 [ext_resource type="Script" uid="uid://dhnlh1dtlicb1" path="res://scripts/level/boss_level.gd" id="1_w6hh3"]
 [ext_resource type="PackedScene" uid="uid://dps8oqjnqfep" path="res://scenes/miscelaneous/ring.tscn" id="2_6y13f"]
 [ext_resource type="Texture2D" uid="uid://dilg0o4x8ayds" path="res://assets/miscelaneous/levels/tt-gf/tt-gf-background.png" id="4_a731b"]
@@ -28,10 +27,8 @@ ring_scene = ExtResource("2_6y13f")
 gem_scene = ExtResource("10_nhjjj")
 punto_inicio = Vector2(2085, 518)
 punto_final = Vector2(-255, 518)
+character_spawn = Vector2(580, 537)
 duracion_movimiento = 5.0
-
-[node name="sonic" parent="." instance=ExtResource("1_vm3ff")]
-position = Vector2(580, 537)
 
 [node name="Eggman" parent="." instance=ExtResource("4_bx5eq")]
 

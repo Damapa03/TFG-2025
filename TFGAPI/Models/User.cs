@@ -7,6 +7,7 @@ public record class User(
     string usuario,
     string email,
     string password,
+    int total_rings,
     Characters? characters
 )
 {
