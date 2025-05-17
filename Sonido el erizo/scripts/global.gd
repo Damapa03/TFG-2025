@@ -5,16 +5,16 @@ var rings = 0
 var character = "sonic"
 
 # Chracters Scenes
-var sonic := preload("res://scenes/characters/sonic.tscn").instantiate()
-var knucles_scene: PackedScene
-#var tails_scene := preload("").instantiate()
+var sonic_scene := preload("res://scenes/characters/sonic.tscn").instantiate()
+var knucles_scene := preload("res://scenes/characters/knuckles.tscn").instantiate()
+var tails_scene := preload("res://scenes/characters/tails.tscn").instantiate()
 
 func actual_character():
 	match character:
 		"sonic": 
-			return sonic
-		"knucles":
-			return ""
+			return sonic_scene
+		"knuckles":
+			return knucles_scene
 		"tails":
-			return ""
+			return tails_scene
 	return ""

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckthnuk0ickf"]
+
+[ext_resource type="Texture2D" uid="uid://cgr66544q8oom" path="res://assets/characters/tails/tails.png" id="1_hbr45"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clept"]
+
+[node name="tails" type="CharacterBody2D" groups=["jugador"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_clept")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_hbr45")

@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://x8n8f016nucf"]
+
+[ext_resource type="Texture2D" uid="uid://bquylcbr68xgq" path="res://assets/characters/knucles/knucklesSprite.png" id="1_nca58"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_clept"]
+
+[node name="knuckles" type="CharacterBody2D" groups=["jugador"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_clept")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nca58")
