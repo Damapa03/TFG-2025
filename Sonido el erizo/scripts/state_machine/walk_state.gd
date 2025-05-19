@@ -9,7 +9,6 @@ class_name Walk_state extends State
 
 
 func state_process(delta: float):
-	print(character.SPEED)
 	character.SPEED += 20
 	if character.SPEED >= 600:
 		run()

@@ -1,7 +1,7 @@
 extends Node
 
 var total_rings = 0
-var rings = 0
+var rings = 1
 var character = "sonic"
 
 # Chracters Scenes

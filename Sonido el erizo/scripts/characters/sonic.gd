@@ -40,5 +40,5 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	print("Hit")
-	if !(stateMachine.currentState is AttackState or stateMachine.currentState is AirState):
+	if !(stateMachine.currentState.name == "AttackState" or stateMachine.currentState is AirState):
 		stateMachine.switch_states(hit_state)

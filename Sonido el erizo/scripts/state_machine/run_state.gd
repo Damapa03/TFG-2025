@@ -6,7 +6,6 @@ class_name Run_State extends State
 @export var jump_animation: String = "rolling"
 
 func state_process(delta: float):
-	print(character.SPEED)
 	
 	if character.SPEED >= 1000:
 		character.SPEED = 1000

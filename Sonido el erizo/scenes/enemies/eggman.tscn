@@ -1,13 +1,13 @@
 [gd_scene load_steps=36 format=3 uid="uid://jn5akofu70o6"]
 
 [ext_resource type="PackedScene" uid="uid://yx4gw4gce2lu" path="res://scenes/enemies/enemie_state_machine.tscn" id="1_n4ykf"]
-[ext_resource type="Script" uid="uid://bkjjsty8d8g4y" path="res://scenes/enemies/eggman.gd" id="1_ql5yg"]
+[ext_resource type="Script" uid="uid://bkjjsty8d8g4y" path="res://scripts/enemies/eggman/eggman.gd" id="1_ql5yg"]
 [ext_resource type="Texture2D" uid="uid://datnrf5tjobpt" path="res://assets/enemies/eggma/eggCarrier-Sprite 68x60.png" id="2_t7qcn"]
-[ext_resource type="Script" uid="uid://pj700w3643s0" path="res://scenes/enemies/eggman_attack_state.gd" id="3_6nngr"]
-[ext_resource type="Script" uid="uid://bjhpoa1tau176" path="res://scenes/enemies/eggman_walk.gd" id="3_atmtb"]
+[ext_resource type="Script" uid="uid://pj700w3643s0" path="res://scripts/enemies/eggman/eggman_attack_state.gd" id="3_6nngr"]
+[ext_resource type="Script" uid="uid://bjhpoa1tau176" path="res://scripts/enemies/eggman/eggman_walk.gd" id="3_atmtb"]
 [ext_resource type="Texture2D" uid="uid://dvkm7u8ldrgpf" path="res://assets/enemies/eggma/EggmanFaces-Sprite 64x64.png" id="3_ql5al"]
-[ext_resource type="Script" uid="uid://c3v3oxo4ss1lc" path="res://scenes/enemies/eggman_hit.gd" id="3_ql5yg"]
-[ext_resource type="Script" uid="uid://cw7n6ofbpjqm6" path="res://scenes/enemies/eggman_dead.gd" id="4_fmist"]
+[ext_resource type="Script" uid="uid://c3v3oxo4ss1lc" path="res://scripts/enemies/eggman/eggman_hit.gd" id="3_ql5yg"]
+[ext_resource type="Script" uid="uid://cw7n6ofbpjqm6" path="res://scripts/enemies/eggman/eggman_dead.gd" id="4_fmist"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ql5yg"]
 animation = &"circular_attack"

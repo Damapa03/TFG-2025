@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TFGAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a0d45f6603ce2836fd10da11156bc70878a90ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7687a3babc7ed689f18e24c0d89782faa05043fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("TFGAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TFGAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

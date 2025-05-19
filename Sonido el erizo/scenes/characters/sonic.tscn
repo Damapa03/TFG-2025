@@ -1,10 +1,9 @@
-[gd_scene load_steps=68 format=3 uid="uid://f6o023650mrl"]
+[gd_scene load_steps=67 format=3 uid="uid://f6o023650mrl"]
 
 [ext_resource type="Script" uid="uid://bpgr472lx7vid" path="res://scripts/characters/sonic.gd" id="1_c1csn"]
 [ext_resource type="Texture2D" uid="uid://s2jnusjwtgfc" path="res://assets/characters/sonic/idle-Sheet 64x64.png" id="2_xxc5g"]
 [ext_resource type="PackedScene" uid="uid://dn1h0pw0o4w6t" path="res://scenes/components/CharacterState_machine.tscn" id="3_i8usl"]
 [ext_resource type="Texture2D" uid="uid://bcdy00xsjylv2" path="res://assets/characters/sonic/walk-Sheet 64x64.png" id="4_i8usl"]
-[ext_resource type="Script" uid="uid://035yuihk05ca" path="res://scripts/state_machine/character_hit_state.gd" id="4_pl84v"]
 [ext_resource type="Texture2D" uid="uid://cbpeduher67e7" path="res://assets/characters/sonic/run-Sheet 64x64.png" id="5_dgahb"]
 [ext_resource type="Texture2D" uid="uid://b1gy0xqgutt4e" path="res://assets/characters/sonic/dash-Sheet 64x64.png" id="6_kgugv"]
 [ext_resource type="Texture2D" uid="uid://b7k41x56gjfer" path="res://assets/characters/sonic/brake-Sheet 64x64.png" id="7_svpfj"]
@@ -806,7 +805,8 @@ position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_ybivp")
 
 [node name="Homming_area" type="Area2D" parent="."]
-monitoring = false
+collision_layer = 2
+collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Homming_area"]
 shape = SubResource("CircleShape2D_35lpn")
@@ -825,13 +825,13 @@ offset_bottom = -38.0
 idle_timer = NodePath("../../Idle")
 idleAngry_timer = NodePath("../../Idle-Angry")
 
-[node name="HitState" parent="StateMachine" index="3" node_paths=PackedStringArray("ground_state")]
-script = ExtResource("4_pl84v")
-ground_state = NodePath("../GroundState")
-can_move = false
-
 [node name="CrouchState" parent="StateMachine" index="4"]
 can_move = false
+
+[node name="AttackState" parent="StateMachine" index="5" node_paths=PackedStringArray("area2d")]
+homming_speed = 600
+steer_force = 100.0
+area2d = NodePath("../../Homming_area")
 
 [node name="WalkState" parent="StateMachine" index="6" node_paths=PackedStringArray("air_state", "ground_state")]
 air_state = NodePath("../AirState")

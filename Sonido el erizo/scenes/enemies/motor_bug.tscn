@@ -194,14 +194,14 @@ _data = {
 &"walk": SubResource("Animation_sm85u")
 }
 
-[node name="MotorBug" type="CharacterBody2D" node_paths=PackedStringArray("hit_state", "rayCastRight", "rayCastLeft", "rayCastDownRight", "rayCastDownLeft", "sprite2D") groups=["Enemies"]]
+[node name="MotorBug" type="CharacterBody2D" node_paths=PackedStringArray("hit_state", "sprite2D", "rayCastRight", "rayCastLeft", "rayCastDownRight", "rayCastDownLeft") groups=["Enemies"]]
 script = ExtResource("1_6husq")
 hit_state = NodePath("EnemieStateMachine/hit")
+sprite2D = NodePath("Sprite2D")
 rayCastRight = NodePath("RayCast\'s/RayCastRight")
 rayCastLeft = NodePath("RayCast\'s/RayCastLeft")
 rayCastDownRight = NodePath("RayCast\'s/RayCastDownRight")
 rayCastDownLeft = NodePath("RayCast\'s/RayCastDownLeft")
-sprite2D = NodePath("Sprite2D")
 
 [node name="EnemieStateMachine" parent="." node_paths=PackedStringArray("currentState", "character", "animationTree") instance=ExtResource("3_6husq")]
 currentState = NodePath("walk")

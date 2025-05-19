@@ -3,20 +3,23 @@ class_name Character_hit_state extends State
 @export var hit_animation: String = "hurt"
 @export var ground_state: State
 @export var dead_state: State
-
-var rings = 1
+@export var inmortal_timer: Timer
 
 
 func on_enter():
 	print("hit enter")
 	playback.start(hit_animation)
 	
-	if rings > 0:
+	if Global.rings > 0:
 		knockback()
 	else:
 		next_state = dead_state
 	
-	rings -= 1
+	if !inmortal_timer.is_stopped():
+		Global.rings -= 1
+	else:
+		inmortal_timer.start()
+
 func state_process(delta: float):
 	if character.is_on_floor():
 		print("to ground")
